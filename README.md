@@ -1,5 +1,7 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+EDU Project: Andżelina Wejt (02-08-2022), purpose of which is to develop an app that will scan
+groceries using device camera and ML. Scanned product will then be used to find dish recipes consisting
+of those ingredients with a third party API (exact provider is yet to be determined).
 
 # Getting Started
 TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
