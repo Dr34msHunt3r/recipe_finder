@@ -1,5 +1,5 @@
 import 'package:auto_route/annotations.dart';
-import 'package:recipe_finder/features/scanner_screen/scanner_screen.dart';
+import 'package:recipe_finder/features/scanner/presentation/scanner_screen.dart';
 import 'package:recipe_finder/features/splash_screen/presentation/splash_screen.dart';
 
 @AdaptiveAutoRouter(
