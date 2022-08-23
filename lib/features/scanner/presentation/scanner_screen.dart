@@ -2,6 +2,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipe_finder/common/widgets/base_screen.dart';
+import 'package:recipe_finder/features/main_navigation/presentation/main_navigation_widget.dart';
 import 'package:recipe_finder/features/scanner/presentation/cubit/camera_cubit.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
@@ -35,11 +36,9 @@ class ScannerScreen extends StatelessWidget {
     var scale = size.aspectRatio * camera.aspectRatio;
     if (scale < 1) scale = 1 / scale;
     return Scaffold(
-        body: Stack(
-      children: [
-        Transform.scale(
-            scale: scale, child: Center(child: CameraPreview(cameraController)))
-      ],
-    ));
+        floatingActionButton: const MainNavigationWidget(),
+        body: Transform.scale(
+            scale: scale,
+            child: Center(child: CameraPreview(cameraController))));
   }
 }

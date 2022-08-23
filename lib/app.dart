@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:recipe_finder/core/extension/app_router.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/core/routing/app_router.gr.dart';
+import 'package:recipe_finder/features/main_navigation/presentation/cubit/main_navigation_cubit.dart';
 import 'package:recipe_finder/features/splash_screen/presentation/cubit/splash_cubit.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
@@ -23,15 +24,23 @@ class App extends StatelessWidget {
     final appConfig = context.appConfig;
     final splashCubit =
         getIt<SplashCubit>(param1: [LoadingTask(_preloadImageAssets)]);
+    final mainNavigationCubit = getIt<MainNavigationCubit>();
 
     _observeSplashStates(
       splashCubit: splashCubit,
+    );
+
+    _observeMainNavigationStates(
+      mainNavigationCubit: mainNavigationCubit,
     );
 
     return MultiProvider(
       providers: [
         BlocProvider<SplashCubit>(
           create: (_) => splashCubit,
+        ),
+        BlocProvider<MainNavigationCubit>(
+          create: (_) => mainNavigationCubit,
         ),
       ],
       child: MaterialApp.router(
@@ -48,8 +57,18 @@ class App extends StatelessWidget {
       state.maybeWhen(
         orElse: () => null,
         splashReady: () => widgetBinding.allowFirstFrame(),
-        showWelcomePage: () async => router.pushAndForget(const ScannerRoute()),
+        showWelcomePage: () => router.pushAndForget(const ScannerRoute()),
       );
+    });
+  }
+
+  void _observeMainNavigationStates({
+    required MainNavigationCubit mainNavigationCubit,
+  }) {
+    mainNavigationCubit.stream.listen((state) {
+      state.maybeWhen(
+          orElse: () => null,
+          showScannedProducts: () => router.push(const ScannedProductsRoute()));
     });
   }
 }
