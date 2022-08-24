@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:recipe_finder/core/config/app_dimens.dart';
+import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/features/main_navigation/presentation/cubit/main_navigation_cubit.dart';
 
 class MainNavigationWidget extends StatelessWidget {
@@ -19,8 +20,7 @@ class MainNavigationWidget extends StatelessWidget {
       children: [
         SpeedDialChild(
             child: const Icon(Icons.assignment_turned_in_outlined),
-            // TODO: MAGIC TEXT
-            label: 'Scanned Products',
+            label: context.localizations.scannedProducts,
             onTap: () =>
                 context.read<MainNavigationCubit>().onScannedProductsTap()),
         SpeedDialChild(
