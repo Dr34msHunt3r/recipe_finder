@@ -17,13 +17,13 @@ class CameraCubit extends Cubit<CameraState> {
   }
 
   Future<void> _startCamera() async {
-    _cameras = await availableCameras();
-    _cameraController = CameraController(
-      _cameras[0],
-      ResolutionPreset.high,
-      enableAudio: false,
-    );
     try {
+      _cameras = await availableCameras();
+      _cameraController = CameraController(
+        _cameras.first,
+        ResolutionPreset.high,
+        enableAudio: false,
+      );
       await _cameraController.initialize();
       emit(CameraState.ready(_cameraController));
     } on Exception catch (e) {
