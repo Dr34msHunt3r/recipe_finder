@@ -20,7 +20,8 @@ class CameraCubit extends Cubit<CameraState> {
     try {
       _cameras = await availableCameras();
       _cameraController = CameraController(
-        _cameras.first,
+        _cameras.firstWhere(
+            (camera) => camera.lensDirection == CameraLensDirection.back),
         ResolutionPreset.high,
         enableAudio: false,
       );
