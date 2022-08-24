@@ -22,7 +22,6 @@ class MainNavigationWidget extends StatelessWidget {
             // TODO: MAGIC TEXT
             label: 'Scanned Products',
             onTap: () =>
-                // TODO: take off from navigation stack when push back button
                 context.read<MainNavigationCubit>().onScannedProductsTap()),
         SpeedDialChild(
             child: const Icon(Icons.copy), label: 'Any other option :)')
