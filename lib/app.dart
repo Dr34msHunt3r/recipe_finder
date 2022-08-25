@@ -8,6 +8,8 @@ import 'package:recipe_finder/features/main_navigation/presentation/cubit/main_n
 import 'package:recipe_finder/features/splash_screen/presentation/cubit/splash_cubit.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
+import 'core/l10n/app_localizations.dart';
+
 class App extends StatelessWidget {
   App(this.widgetBinding, {Key? key}) : super(key: key) {
     widgetBinding.deferFirstFrame();
@@ -44,7 +46,10 @@ class App extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
           title: appConfig.appTitle,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
           routeInformationParser: router.defaultRouteParser(),
           routerDelegate: router.delegate()),
     );
