@@ -21,10 +21,6 @@ class ScannerView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      // BaseScreen(
-      //   withMainNavigation: true,
-      //   customPadding: EdgeInsets.zero,
-      //   child:
       BlocConsumer<ScannerCubit, ScannerState>(
           listener: (_, state) => state.maybeWhen(
                 orElse: () => null,
@@ -43,9 +39,7 @@ class ScannerView extends StatelessWidget {
                     withMainNavigation: true,
                     child:
                         _cameraView(context, cameraController, customPainter)),
-              ))
-      // )
-      ;
+              ));
 
   Widget _cameraView(BuildContext context, CameraController cameraController,
       CustomPaint? customPaint) {
