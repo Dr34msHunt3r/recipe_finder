@@ -6,9 +6,9 @@ class AppColors {
   static const black = Color(0xFF000000);
 
   // LOGO colors
-  static const yellow = Color(0xFFFFBF00);
-  static const orange = Color(0xFFFF7F50);
-  static const pastelPink = Color(0xFFD23B68);
-  static const orangeBright = Color(0xFFFAAB64);
-  static const pinkBright = Color(0xFFF1686C);
+  static const artyClickAmber = Color(0xFFFFBF00);
+  static const mangoOrange = Color(0xFFFF7F50);
+  static const deepRose = Color(0xFFD23B68);
+  static const paleOrange = Color(0xFFFAAB64);
+  static const lightCarminePink = Color(0xFFF1686C);
 }
