@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:recipe_finder/core/config/app_colors.dart';
 import 'package:recipe_finder/core/config/app_dimens.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/features/main_navigation/presentation/cubit/main_navigation_cubit.dart';
@@ -11,8 +12,7 @@ class MainNavigationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SpeedDial(
-      // TODO: use AppColors for this
-      backgroundColor: Colors.amber,
+      backgroundColor: AppColors.artyClickAmber,
       overlayOpacity: 0,
       spaceBetweenChildren: AppDimens.bigSpace_12,
       spacing: AppDimens.bigSpace_12,

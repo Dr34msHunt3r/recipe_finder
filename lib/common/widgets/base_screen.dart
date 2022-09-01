@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_finder/core/config/app_colors.dart';
 import 'package:recipe_finder/core/config/app_dimens.dart';
+import 'package:recipe_finder/features/main_navigation/presentation/main_navigation_widget.dart';
 
 class BaseScreen extends StatelessWidget {
   const BaseScreen(
@@ -8,6 +9,8 @@ class BaseScreen extends StatelessWidget {
       this.withTopPadding = true,
       this.withBottomPadding = true,
       this.customPadding,
+      this.withMainNavigation = false,
+      this.customBackground,
       Key? key})
       : super(key: key);
 
@@ -15,24 +18,34 @@ class BaseScreen extends StatelessWidget {
   final EdgeInsets? customPadding;
   final bool withTopPadding;
   final bool withBottomPadding;
+  final bool withMainNavigation;
+  final Color? customBackground;
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                AppColors.backgroundGradientStart,
-                AppColors.backgroundGradientStop
-              ])),
-          child: SafeArea(
-            child: Padding(
-              padding: _getPadding(),
-              child: child,
-            ),
-          ),
+      floatingActionButton:
+          withMainNavigation ? const MainNavigationWidget() : null,
+      body: customBackground != null
+          ? Container(
+              color: customBackground,
+              child: _safeArea(),
+            )
+          : Container(
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                    AppColors.backgroundGradientStart,
+                    AppColors.backgroundGradientStop
+                  ])),
+              child: _safeArea(),
+            ));
+
+  Widget _safeArea() => SafeArea(
+        child: Padding(
+          padding: _getPadding(),
+          child: child,
         ),
       );
 
