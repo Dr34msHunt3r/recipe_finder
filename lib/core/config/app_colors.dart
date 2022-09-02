@@ -11,4 +11,9 @@ class AppColors {
   static const deepRose = Color(0xFFD23B68);
   static const paleOrange = Color(0xFFFAAB64);
   static const lightCarminePink = Color(0xFFF1686C);
+
+  // Text colors
+  static const primaryText = Color(0xA6000000);
+  static const secondaryText = Color(0x80000000);
+  static const hyperText = Color(0xFF1167B7);
 }

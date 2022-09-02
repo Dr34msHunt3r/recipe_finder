@@ -1,5 +1,9 @@
 {
   "@@locale": "en",
   "scannedProducts": "Scanned Products",
-  "settings": "Settings"
+  "settings": "Settings",
+  "noAccessToCamera": "No access to camera",
+  "weDoNotHaveAccessToYourCamera": "We don't have access to your camera. ",
+  "youCanEnableAccessIn": "You can enable access in ",
+  "privacySettings": "privacy settings"
 }
