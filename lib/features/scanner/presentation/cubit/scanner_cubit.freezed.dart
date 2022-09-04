@@ -22,6 +22,7 @@ mixin _$ScannerState {
     required TResult Function(
             CameraController cameraController, CustomPaint? customPaint)
         ready,
+    required TResult Function() cameraAccessDenied,
     required TResult Function() failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,6 +32,7 @@ mixin _$ScannerState {
     TResult Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
+    TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,6 +42,7 @@ mixin _$ScannerState {
     TResult Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
+    TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
     required TResult orElse(),
   }) =>
@@ -48,6 +51,7 @@ mixin _$ScannerState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Ready value) ready,
+    required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
     required TResult Function(_Failure value) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +59,7 @@ mixin _$ScannerState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
+    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +67,7 @@ mixin _$ScannerState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
+    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) =>
@@ -133,6 +139,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     required TResult Function(
             CameraController cameraController, CustomPaint? customPaint)
         ready,
+    required TResult Function() cameraAccessDenied,
     required TResult Function() failure,
   }) {
     return initial();
@@ -145,6 +152,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
+    TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
   }) {
     return initial?.call();
@@ -157,6 +165,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
+    TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
     required TResult orElse(),
   }) {
@@ -171,6 +180,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Ready value) ready,
+    required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
     required TResult Function(_Failure value) failure,
   }) {
     return initial(this);
@@ -181,6 +191,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
+    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
   }) {
     return initial?.call(this);
@@ -191,6 +202,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
+    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -292,6 +304,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
     required TResult Function(
             CameraController cameraController, CustomPaint? customPaint)
         ready,
+    required TResult Function() cameraAccessDenied,
     required TResult Function() failure,
   }) {
     return ready(cameraController, customPaint);
@@ -304,6 +317,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
     TResult Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
+    TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
   }) {
     return ready?.call(cameraController, customPaint);
@@ -316,6 +330,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
     TResult Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
+    TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
     required TResult orElse(),
   }) {
@@ -330,6 +345,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Ready value) ready,
+    required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
     required TResult Function(_Failure value) failure,
   }) {
     return ready(this);
@@ -340,6 +356,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
+    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
   }) {
     return ready?.call(this);
@@ -350,6 +367,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
+    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -369,6 +387,139 @@ abstract class _Ready implements ScannerState, ScannerBuilderState {
   @JsonKey(ignore: true)
   _$$_ReadyCopyWith<_$_Ready> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_CameraAccessDeniedCopyWith<$Res> {
+  factory _$$_CameraAccessDeniedCopyWith(_$_CameraAccessDenied value,
+          $Res Function(_$_CameraAccessDenied) then) =
+      __$$_CameraAccessDeniedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_CameraAccessDeniedCopyWithImpl<$Res>
+    extends _$ScannerStateCopyWithImpl<$Res>
+    implements _$$_CameraAccessDeniedCopyWith<$Res> {
+  __$$_CameraAccessDeniedCopyWithImpl(
+      _$_CameraAccessDenied _value, $Res Function(_$_CameraAccessDenied) _then)
+      : super(_value, (v) => _then(v as _$_CameraAccessDenied));
+
+  @override
+  _$_CameraAccessDenied get _value => super._value as _$_CameraAccessDenied;
+}
+
+/// @nodoc
+
+class _$_CameraAccessDenied
+    with DiagnosticableTreeMixin
+    implements _CameraAccessDenied {
+  const _$_CameraAccessDenied();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ScannerState.cameraAccessDenied()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'ScannerState.cameraAccessDenied'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_CameraAccessDenied);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(
+            CameraController cameraController, CustomPaint? customPaint)
+        ready,
+    required TResult Function() cameraAccessDenied,
+    required TResult Function() failure,
+  }) {
+    return cameraAccessDenied();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(
+            CameraController cameraController, CustomPaint? customPaint)?
+        ready,
+    TResult Function()? cameraAccessDenied,
+    TResult Function()? failure,
+  }) {
+    return cameraAccessDenied?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(
+            CameraController cameraController, CustomPaint? customPaint)?
+        ready,
+    TResult Function()? cameraAccessDenied,
+    TResult Function()? failure,
+    required TResult orElse(),
+  }) {
+    if (cameraAccessDenied != null) {
+      return cameraAccessDenied();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Ready value) ready,
+    required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return cameraAccessDenied(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Ready value)? ready,
+    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult Function(_Failure value)? failure,
+  }) {
+    return cameraAccessDenied?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Ready value)? ready,
+    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (cameraAccessDenied != null) {
+      return cameraAccessDenied(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CameraAccessDenied
+    implements ScannerState, ScannerBuilderState {
+  const factory _CameraAccessDenied() = _$_CameraAccessDenied;
 }
 
 /// @nodoc
@@ -420,6 +571,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     required TResult Function(
             CameraController cameraController, CustomPaint? customPaint)
         ready,
+    required TResult Function() cameraAccessDenied,
     required TResult Function() failure,
   }) {
     return failure();
@@ -432,6 +584,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
+    TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
   }) {
     return failure?.call();
@@ -444,6 +597,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
+    TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
     required TResult orElse(),
   }) {
@@ -458,6 +612,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Ready value) ready,
+    required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
     required TResult Function(_Failure value) failure,
   }) {
     return failure(this);
@@ -468,6 +623,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
+    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
   }) {
     return failure?.call(this);
@@ -478,6 +634,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
+    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {

@@ -31,7 +31,8 @@ class ScannerView extends StatelessWidget {
               ),
           buildWhen: (_, state) => state is ScannerBuilderState,
           builder: (_, state) => state.maybeWhen(
-                orElse: () => _noCameraPermissionsView(context),
+                orElse: () => const SizedBox.shrink(),
+                cameraAccessDenied: () => _noCameraPermissionsView(context),
                 ready: (cameraController, customPainter) => BaseScreen(
                     customBackground: AppColors.black,
                     customPadding: EdgeInsets.zero,
