@@ -44,10 +44,19 @@ class ScannerCubit extends Cubit<ScannerState> {
       );
       await _cameraController.initialize().then((_) => _startLiveFeed());
       emit(ScannerState.ready(_cameraController, _customPaint));
-    } catch (e) {
-      emit(const ScannerState.failure());
-      if (kDebugMode) {
-        print("\x1B[31m_startCamera error: $e\x1B[0m");
+    } on CameraException catch (e) {
+      switch (e.code) {
+        case "CameraAccessDenied":
+          emit(const ScannerState.cameraAccessDenied());
+          if (kDebugMode) {
+            print("\x1B[31mCamera access was denied.\x1B[0m");
+          }
+          break;
+        default:
+          emit(const ScannerState.failure());
+          if (kDebugMode) {
+            print("\x1B[31m_startCamera error: $e\x1B[0m");
+          }
       }
     }
   }

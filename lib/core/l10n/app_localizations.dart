@@ -107,6 +107,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Settings'**
   String get settings;
+
+  /// No description provided for @noAccessToCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'No access to camera'**
+  String get noAccessToCamera;
+
+  /// No description provided for @weDoNotHaveAccessToYourCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'We don\'t have access to your camera. '**
+  String get weDoNotHaveAccessToYourCamera;
+
+  /// No description provided for @youCanEnableAccessIn.
+  ///
+  /// In en, this message translates to:
+  /// **'You can enable access in '**
+  String get youCanEnableAccessIn;
+
+  /// No description provided for @privacySettings.
+  ///
+  /// In en, this message translates to:
+  /// **'privacy settings'**
+  String get privacySettings;
 }
 
 class _AppLocalizationsDelegate

@@ -8,6 +8,9 @@ class ScannerState with _$ScannerState {
   const factory ScannerState.ready(
       CameraController cameraController, CustomPaint? customPaint) = _Ready;
 
+  @Implements<ScannerBuilderState>()
+  const factory ScannerState.cameraAccessDenied() = _CameraAccessDenied;
+
   @Implements<ScannerListenerState>()
   const factory ScannerState.failure() = _Failure;
 }
