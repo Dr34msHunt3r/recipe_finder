@@ -72,8 +72,10 @@ class App extends StatelessWidget {
   }) {
     mainNavigationCubit.stream.listen((state) {
       state.maybeWhen(
-          orElse: () => null,
-          showScannedProducts: () => router.push(const ScannedProductsRoute()));
+        orElse: () => null,
+        showScannedProducts: () => router.push(const ScannedProductsRoute()),
+        showSettings: () => router.push(const SettingsRoute()),
+      );
     });
   }
 }

@@ -20,18 +20,21 @@ mixin _$MainNavigationState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() showScannedProducts,
+    required TResult Function() showSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? showScannedProducts,
+    TResult Function()? showSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? showScannedProducts,
+    TResult Function()? showSettings,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$MainNavigationState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ShowScannedProducts value) showScannedProducts,
+    required TResult Function(_ShowSettings value) showSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ShowScannedProducts value)? showScannedProducts,
+    TResult Function(_ShowSettings value)? showSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ShowScannedProducts value)? showScannedProducts,
+    TResult Function(_ShowSettings value)? showSettings,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -115,6 +121,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() showScannedProducts,
+    required TResult Function() showSettings,
   }) {
     return initial();
   }
@@ -124,6 +131,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? showScannedProducts,
+    TResult Function()? showSettings,
   }) {
     return initial?.call();
   }
@@ -133,6 +141,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? showScannedProducts,
+    TResult Function()? showSettings,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -146,6 +155,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ShowScannedProducts value) showScannedProducts,
+    required TResult Function(_ShowSettings value) showSettings,
   }) {
     return initial(this);
   }
@@ -155,6 +165,7 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ShowScannedProducts value)? showScannedProducts,
+    TResult Function(_ShowSettings value)? showSettings,
   }) {
     return initial?.call(this);
   }
@@ -164,6 +175,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ShowScannedProducts value)? showScannedProducts,
+    TResult Function(_ShowSettings value)? showSettings,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -220,6 +232,7 @@ class _$_ShowScannedProducts implements _ShowScannedProducts {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() showScannedProducts,
+    required TResult Function() showSettings,
   }) {
     return showScannedProducts();
   }
@@ -229,6 +242,7 @@ class _$_ShowScannedProducts implements _ShowScannedProducts {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? showScannedProducts,
+    TResult Function()? showSettings,
   }) {
     return showScannedProducts?.call();
   }
@@ -238,6 +252,7 @@ class _$_ShowScannedProducts implements _ShowScannedProducts {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? showScannedProducts,
+    TResult Function()? showSettings,
     required TResult orElse(),
   }) {
     if (showScannedProducts != null) {
@@ -251,6 +266,7 @@ class _$_ShowScannedProducts implements _ShowScannedProducts {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ShowScannedProducts value) showScannedProducts,
+    required TResult Function(_ShowSettings value) showSettings,
   }) {
     return showScannedProducts(this);
   }
@@ -260,6 +276,7 @@ class _$_ShowScannedProducts implements _ShowScannedProducts {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ShowScannedProducts value)? showScannedProducts,
+    TResult Function(_ShowSettings value)? showSettings,
   }) {
     return showScannedProducts?.call(this);
   }
@@ -269,6 +286,7 @@ class _$_ShowScannedProducts implements _ShowScannedProducts {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ShowScannedProducts value)? showScannedProducts,
+    TResult Function(_ShowSettings value)? showSettings,
     required TResult orElse(),
   }) {
     if (showScannedProducts != null) {
@@ -281,4 +299,116 @@ class _$_ShowScannedProducts implements _ShowScannedProducts {
 abstract class _ShowScannedProducts
     implements MainNavigationState, MainNavigationListenerState {
   const factory _ShowScannedProducts() = _$_ShowScannedProducts;
+}
+
+/// @nodoc
+abstract class _$$_ShowSettingsCopyWith<$Res> {
+  factory _$$_ShowSettingsCopyWith(
+          _$_ShowSettings value, $Res Function(_$_ShowSettings) then) =
+      __$$_ShowSettingsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ShowSettingsCopyWithImpl<$Res>
+    extends _$MainNavigationStateCopyWithImpl<$Res>
+    implements _$$_ShowSettingsCopyWith<$Res> {
+  __$$_ShowSettingsCopyWithImpl(
+      _$_ShowSettings _value, $Res Function(_$_ShowSettings) _then)
+      : super(_value, (v) => _then(v as _$_ShowSettings));
+
+  @override
+  _$_ShowSettings get _value => super._value as _$_ShowSettings;
+}
+
+/// @nodoc
+
+class _$_ShowSettings implements _ShowSettings {
+  const _$_ShowSettings();
+
+  @override
+  String toString() {
+    return 'MainNavigationState.showSettings()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ShowSettings);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() showScannedProducts,
+    required TResult Function() showSettings,
+  }) {
+    return showSettings();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? showScannedProducts,
+    TResult Function()? showSettings,
+  }) {
+    return showSettings?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? showScannedProducts,
+    TResult Function()? showSettings,
+    required TResult orElse(),
+  }) {
+    if (showSettings != null) {
+      return showSettings();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ShowScannedProducts value) showScannedProducts,
+    required TResult Function(_ShowSettings value) showSettings,
+  }) {
+    return showSettings(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ShowScannedProducts value)? showScannedProducts,
+    TResult Function(_ShowSettings value)? showSettings,
+  }) {
+    return showSettings?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ShowScannedProducts value)? showScannedProducts,
+    TResult Function(_ShowSettings value)? showSettings,
+    required TResult orElse(),
+  }) {
+    if (showSettings != null) {
+      return showSettings(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ShowSettings
+    implements MainNavigationState, MainNavigationListenerState {
+  const factory _ShowSettings() = _$_ShowSettings;
 }
