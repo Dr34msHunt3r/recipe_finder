@@ -19,14 +19,20 @@ class MainNavigationWidget extends StatelessWidget {
       animatedIcon: AnimatedIcons.menu_close,
       children: [
         SpeedDialChild(
-            child: const Icon(Icons.assignment_turned_in_outlined),
-            label: context.localizations.scannedProducts,
-            onTap: () =>
-                context.read<MainNavigationCubit>().onScannedProductsTap()),
+          child: const Icon(Icons.assignment_turned_in_outlined),
+          label: context.localizations.scannedProducts,
+          onTap: () =>
+              context.read<MainNavigationCubit>().onScannedProductsTap(),
+        ),
         SpeedDialChild(
-            child: const Icon(Icons.settings),
-            label: context.localizations.settings,
-            onTap: () => context.read<MainNavigationCubit>().onSettingsTap())
+<<<<<<< Updated upstream
+            child: const Icon(Icons.copy), label: 'Any other option :)')
+=======
+          child: const Icon(Icons.settings),
+          label: context.localizations.settings,
+          onTap: () => context.read<MainNavigationCubit>().onSettingsTap(),
+        ),
+>>>>>>> Stashed changes
       ],
     );
   }
