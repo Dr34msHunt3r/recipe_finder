@@ -23,24 +23,27 @@ class BaseScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      floatingActionButton:
-          withMainNavigation ? const MainNavigationWidget() : null,
-      body: customBackground != null
-          ? Container(
-              color: customBackground,
-              child: _safeArea(),
-            )
-          : Container(
-              decoration: const BoxDecoration(
+        floatingActionButton:
+            withMainNavigation ? const MainNavigationWidget() : null,
+        body: customBackground != null
+            ? Container(
+                color: customBackground,
+                child: _safeArea(),
+              )
+            : Container(
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                    AppColors.backgroundGradientStart,
-                    AppColors.backgroundGradientStop
-                  ])),
-              child: _safeArea(),
-            ));
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      AppColors.backgroundGradientStart,
+                      AppColors.backgroundGradientStop,
+                    ],
+                  ),
+                ),
+                child: _safeArea(),
+              ),
+      );
 
   Widget _safeArea() => SafeArea(
         child: Padding(
