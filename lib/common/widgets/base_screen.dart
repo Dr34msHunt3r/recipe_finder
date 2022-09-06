@@ -32,15 +32,13 @@ class BaseScreen extends StatelessWidget {
             )
           : Container(
               decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
                     AppColors.backgroundGradientStart,
                     AppColors.backgroundGradientStop
-                  ],
-                ),
-              ),
+                  ])),
               child: _safeArea(),
             ));
 

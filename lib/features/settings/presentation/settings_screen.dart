@@ -27,22 +27,16 @@ class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Column(
         children: [
-          _settingsItem(
-            context.localizations.cameraPermission,
-            const Icon(
-              Icons.camera_alt,
-              color: AppColors.paleOrange,
-            ),
-          ),
+          _settingsItem(context.localizations.cameraPermission,
+              const Icon(Icons.camera_alt, color: AppColors.paleOrange)),
         ],
       );
 
   Widget _settingsItem(String optionTitle, Icon icon) => Padding(
         padding: const EdgeInsets.only(
-          left: AppDimens.mediumSpace_8,
-          top: AppDimens.mediumSpace_8,
-          right: AppDimens.mediumSpace_8,
-        ),
+            left: AppDimens.mediumSpace_8,
+            top: AppDimens.mediumSpace_8,
+            right: AppDimens.mediumSpace_8),
         child: Row(
           children: [
             icon,
@@ -52,15 +46,11 @@ class _Body extends StatelessWidget {
             Text(
               optionTitle,
               style: const TextStyle(
-                color: AppColors.primaryText,
-                fontSize: AppDimens.normalTextSize_16,
-              ),
+                  color: AppColors.primaryText,
+                  fontSize: AppDimens.normalTextSize_16),
             ),
             const Spacer(),
-            const Switch.adaptive(
-              value: false,
-              onChanged: null,
-            ),
+            const Switch.adaptive(value: false, onChanged: null)
           ],
         ),
       );

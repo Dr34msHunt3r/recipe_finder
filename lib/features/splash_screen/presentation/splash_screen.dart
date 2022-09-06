@@ -20,12 +20,10 @@ class _Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Colors.white,
-            Colors.white70,
-          ],
-        ),
+        gradient: LinearGradient(colors: [
+          Colors.white,
+          Colors.white70,
+        ]),
       ),
       constraints: const BoxConstraints.expand(),
       child: Image.asset(
