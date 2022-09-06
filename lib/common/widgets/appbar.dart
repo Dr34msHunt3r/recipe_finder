@@ -15,11 +15,14 @@ class CustomizedAppbar extends StatelessWidget {
             title,
           ),
           titleTextStyle: const TextStyle(
-              color: AppColors.primaryText,
-              fontSize: AppDimens.bigTextSize_20,
-              fontWeight: FontWeight.w600),
+            color: AppColors.primaryText,
+            fontSize: AppDimens.bigTextSize_20,
+            fontWeight: FontWeight.w600,
+          ),
           backgroundColor: AppColors.backgroundGradientStart,
-          iconTheme: const IconThemeData(color: AppColors.primaryText),
+          iconTheme: const IconThemeData(
+            color: AppColors.primaryText,
+          ),
         ),
       );
 }
