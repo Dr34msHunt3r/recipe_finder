@@ -24,4 +24,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get privacySettings => 'privacy settings';
+
+  @override
+  String get cameraPermission => 'Camera permission';
 }

@@ -13,6 +13,10 @@ class MainNavigationCubit extends Cubit<MainNavigationState> {
     emit(const MainNavigationState.showScannedProducts());
   }
 
+  void onSettingsTap() {
+    emit(const MainNavigationState.showSettings());
+  }
+
   @override
   void emit(MainNavigationState state) {
     super.emit(state);

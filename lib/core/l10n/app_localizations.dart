@@ -131,6 +131,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'privacy settings'**
   String get privacySettings;
+
+  /// No description provided for @cameraPermission.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera permission'**
+  String get cameraPermission;
 }
 
 class _AppLocalizationsDelegate

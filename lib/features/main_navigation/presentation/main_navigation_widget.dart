@@ -24,7 +24,9 @@ class MainNavigationWidget extends StatelessWidget {
             onTap: () =>
                 context.read<MainNavigationCubit>().onScannedProductsTap()),
         SpeedDialChild(
-            child: const Icon(Icons.copy), label: 'Any other option :)')
+            child: const Icon(Icons.settings),
+            label: context.localizations.settings,
+            onTap: () => context.read<MainNavigationCubit>().onSettingsTap())
       ],
     );
   }

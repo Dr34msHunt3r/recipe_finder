@@ -7,6 +7,9 @@ class MainNavigationState with _$MainNavigationState {
   @Implements<MainNavigationListenerState>()
   const factory MainNavigationState.showScannedProducts() =
       _ShowScannedProducts;
+
+  @Implements<MainNavigationListenerState>()
+  const factory MainNavigationState.showSettings() = _ShowSettings;
 }
 
 abstract class MainNavigationListenerState {}
