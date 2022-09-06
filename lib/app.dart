@@ -46,12 +46,13 @@ class App extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
-          debugShowCheckedModeBanner: false,
-          title: appConfig.appTitle,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          supportedLocales: AppLocalizations.supportedLocales,
-          routeInformationParser: router.defaultRouteParser(),
-          routerDelegate: router.delegate()),
+        debugShowCheckedModeBanner: false,
+        title: appConfig.appTitle,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        routeInformationParser: router.defaultRouteParser(),
+        routerDelegate: router.delegate(),
+      ),
     );
   }
 
@@ -62,7 +63,9 @@ class App extends StatelessWidget {
       state.maybeWhen(
         orElse: () => null,
         splashReady: () => widgetBinding.allowFirstFrame(),
-        showWelcomePage: () => router.pushAndForget(const ScannerRoute()),
+        showWelcomePage: () => router.pushAndForget(
+          const ScannerRoute(),
+        ),
       );
     });
   }
@@ -72,10 +75,19 @@ class App extends StatelessWidget {
   }) {
     mainNavigationCubit.stream.listen((state) {
       state.maybeWhen(
+<<<<<<< Updated upstream
+          orElse: () => null,
+          showScannedProducts: () => router.push(const ScannedProductsRoute()));
+=======
         orElse: () => null,
-        showScannedProducts: () => router.push(const ScannedProductsRoute()),
-        showSettings: () => router.push(const SettingsRoute()),
+        showScannedProducts: () => router.push(
+          const ScannedProductsRoute(),
+        ),
+        showSettings: () => router.push(
+          const SettingsRoute(),
+        ),
       );
+>>>>>>> Stashed changes
     });
   }
 }
