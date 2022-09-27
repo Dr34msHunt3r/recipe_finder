@@ -7,16 +7,13 @@ import 'package:recipe_finder/core/config/app_colors.dart';
 import 'package:recipe_finder/core/config/app_dimens.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/features/scanner/presentation/cubit/scanner_cubit.dart';
-import 'package:recipe_finder/injectable/injectable.dart';
+import 'package:recipe_finder/features/settings/presentation/settings_screen.dart';
 
 class ScannerScreen extends StatelessWidget {
   const ScannerScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => BlocProvider(
-        create: (_) => getIt<ScannerCubit>()..init(),
-        child: const ScannerView(),
-      );
+  Widget build(BuildContext context) => const ScannerView();
 }
 
 class ScannerView extends StatelessWidget {
@@ -25,21 +22,22 @@ class ScannerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
       BlocConsumer<ScannerCubit, ScannerState>(
-          listener: (_, state) => state.maybeWhen(
-                orElse: () => null,
-                //TODO: display failure in toast or success for scanned product
-              ),
-          buildWhen: (_, state) => state is ScannerBuilderState,
-          builder: (_, state) => state.maybeWhen(
-                orElse: () => const SizedBox.shrink(),
-                cameraAccessDenied: () => _noCameraPermissionsView(context),
-                ready: (cameraController, customPainter) => BaseScreen(
-                  customBackground: AppColors.black,
-                  customPadding: EdgeInsets.zero,
-                  withMainNavigation: true,
-                  child: _cameraView(context, cameraController, customPainter),
-                ),
-              ));
+        listener: (_, state) => state.maybeWhen(
+          orElse: () => null,
+          //TODO: display failure in toast or success for scanned product
+        ),
+        buildWhen: (_, state) => state is ScannerBuilderState,
+        builder: (_, state) => state.maybeWhen(
+          orElse: () => const SizedBox.shrink(),
+          cameraAccessDenied: () => _noCameraPermissionsView(context),
+          ready: (cameraController, customPainter) => BaseScreen(
+            customBackground: AppColors.black,
+            customPadding: EdgeInsets.zero,
+            withMainNavigation: true,
+            child: _cameraView(context, cameraController, customPainter),
+          ),
+        ),
+      );
 
   Widget _cameraView(BuildContext context, CameraController cameraController,
       CustomPaint? customPaint) {
@@ -103,11 +101,19 @@ class ScannerView extends StatelessWidget {
                       color: AppColors.secondaryText,
                     ),
                   ),
-                  Text(
-                    context.localizations.privacySettings,
-                    style: const TextStyle(
-                      fontSize: AppDimens.smallTextSize_14,
-                      color: AppColors.hyperText,
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SettingsScreen(),
+                      ),
+                    ),
+                    child: Text(
+                      context.localizations.privacySettings,
+                      style: const TextStyle(
+                        fontSize: AppDimens.smallTextSize_14,
+                        color: AppColors.hyperText,
+                      ),
                     ),
                   ),
                 ],

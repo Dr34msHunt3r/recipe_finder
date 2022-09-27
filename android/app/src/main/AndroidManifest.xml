@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.recipe_finder">
+    <uses-permission android:name="android.permission.CAMERA" />
    <application
         android:label="recipe_finder"
         android:name="${applicationName}"
