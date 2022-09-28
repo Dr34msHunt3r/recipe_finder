@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:recipe_finder/common/widgets/app_circular_progress_indicator.dart';
 import 'package:recipe_finder/common/widgets/base_screen.dart';
 import 'package:recipe_finder/core/config/app_assets.dart';
 import 'package:recipe_finder/core/config/app_colors.dart';
@@ -28,7 +29,7 @@ class ScannerView extends StatelessWidget {
         ),
         buildWhen: (_, state) => state is ScannerBuilderState,
         builder: (_, state) => state.maybeWhen(
-          orElse: () => const SizedBox.shrink(),
+          orElse: () => const Center(child: AppCircularProgressIndicator()),
           cameraAccessDenied: () => _noCameraPermissionsView(context),
           ready: (cameraController, customPainter) => BaseScreen(
             customBackground: AppColors.black,
