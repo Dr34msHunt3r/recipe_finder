@@ -27,6 +27,7 @@ class SettingsCubit extends Cubit<SettingsState> {
     _permissionStatus = await Permission.camera.request();
 
     if (_permissionStatus.isGranted) {
+      openAppSettings();
       emit(const SettingsState.requestPermission(true));
       emit(const SettingsState.permissionGranted());
     } else if (Platform.isIOS || _permissionStatus.isPermanentlyDenied) {
