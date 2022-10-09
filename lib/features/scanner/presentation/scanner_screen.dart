@@ -5,6 +5,7 @@ import 'package:recipe_finder/common/widgets/base_screen.dart';
 import 'package:recipe_finder/core/config/app_assets.dart';
 import 'package:recipe_finder/core/config/app_colors.dart';
 import 'package:recipe_finder/core/config/app_dimens.dart';
+import 'package:recipe_finder/core/config/app_toast.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/features/scanner/presentation/cubit/scanner_cubit.dart';
 import 'package:recipe_finder/features/settings/presentation/settings_screen.dart';
@@ -24,7 +25,8 @@ class ScannerView extends StatelessWidget {
       BlocConsumer<ScannerCubit, ScannerState>(
         listener: (_, state) => state.maybeWhen(
           orElse: () => null,
-          //TODO: display failure in toast or success for scanned product
+          successfullyScannedObject: (message) => AppToasts.showSuccessToast(
+              message: "$message${context.localizations.hasBeenAdded}"),
         ),
         buildWhen: (_, state) => state is ScannerBuilderState,
         builder: (_, state) => state.maybeWhen(

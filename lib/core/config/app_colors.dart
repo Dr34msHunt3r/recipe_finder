@@ -4,6 +4,9 @@ class AppColors {
   static const backgroundGradientStart = Color(0xFFFFFFFF);
   static const backgroundGradientStop = Color(0xFFF1F8F8);
   static const black = Color(0xFF000000);
+  static const statusRed = Color(0xFFDF2E15);
+  static const white = Color(0xFFFFFFFF);
+  static const dark = Color(0xFF3D5253);
 
   // LOGO colors
   static const artyClickAmber = Color(0xFFFFBF00);

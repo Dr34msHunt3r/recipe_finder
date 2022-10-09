@@ -13,6 +13,10 @@ class ScannerState with _$ScannerState {
 
   @Implements<ScannerListenerState>()
   const factory ScannerState.failure() = _Failure;
+
+  @Implements<ScannerListenerState>()
+  const factory ScannerState.successfullyScannedObject(String message) =
+      _SuccessfullyScannedObject;
 }
 
 abstract class ScannerBuilderState {}

@@ -27,4 +27,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get cameraPermission => 'Camera permission';
+
+  @override
+  String get hasBeenAdded => ' has been added';
 }

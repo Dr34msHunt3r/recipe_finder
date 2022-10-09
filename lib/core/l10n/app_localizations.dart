@@ -137,6 +137,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Camera permission'**
   String get cameraPermission;
+
+  /// No description provided for @hasBeenAdded.
+  ///
+  /// In en, this message translates to:
+  /// **' has been added'**
+  String get hasBeenAdded;
 }
 
 class _AppLocalizationsDelegate

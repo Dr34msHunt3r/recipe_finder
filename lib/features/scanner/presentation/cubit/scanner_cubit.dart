@@ -10,6 +10,7 @@ import 'package:google_mlkit_object_detection/google_mlkit_object_detection.dart
 import 'package:injectable/injectable.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:recipe_finder/common/models/product/product_model.dart';
 import 'package:recipe_finder/features/scanner/object_detector_painter.dart';
 
 part 'scanner_cubit.freezed.dart';
@@ -25,6 +26,7 @@ class ScannerCubit extends Cubit<ScannerState> {
   bool _canProcess = false;
   bool _isBusy = false;
   CustomPaint? _customPaint;
+  final List<ProductModel?> _scannedProducts = [];
 
   static const path = 'assets/ml/object_labeler.tflite';
 
@@ -85,6 +87,7 @@ class ScannerCubit extends Cubit<ScannerState> {
           inputImage.inputImageData!.imageRotation,
           inputImage.inputImageData!.size);
       _customPaint = CustomPaint(painter: painter);
+      _addScannedProducts(objects);
       emit(ScannerState.ready(_cameraController, _customPaint));
     }
     _isBusy = false;
@@ -149,6 +152,39 @@ class ScannerCubit extends Cubit<ScannerState> {
           .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes));
     }
     return file.path;
+  }
+
+  void _addScannedProducts(List<DetectedObject> objects) {
+    for (var object in objects) {
+      double highestConfidence = 0;
+      for (var label in object.labels) {
+        if (label.confidence >= highestConfidence) {
+          highestConfidence = label.confidence;
+        }
+      }
+
+      if (highestConfidence > 0) {
+        var highestConfidenceObjects = object.labels
+            .where((label) => label.confidence == highestConfidence);
+
+        if (!_checkIfProductIsInList(highestConfidenceObjects)) {
+          _scannedProducts.add(ProductModel(
+            uid: highestConfidenceObjects.first.index.toString(),
+            name: highestConfidenceObjects.first.text,
+          ));
+          emit(ScannerState.successfullyScannedObject(
+              highestConfidenceObjects.first.text));
+        }
+      }
+    }
+    _scannedProducts;
+  }
+
+  bool _checkIfProductIsInList(Iterable<Label> highestConfidenceObject) {
+    return _scannedProducts.singleWhere(
+            (product) => product!.name == highestConfidenceObject.first.text,
+            orElse: () => null) !=
+        null;
   }
 
   @override
