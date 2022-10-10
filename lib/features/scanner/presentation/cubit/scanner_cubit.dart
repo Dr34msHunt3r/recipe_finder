@@ -156,33 +156,31 @@ class ScannerCubit extends Cubit<ScannerState> {
 
   void _addScannedProducts(List<DetectedObject> objects) {
     for (var object in objects) {
-      double highestConfidence = 0;
+      Label? highestConfidenceObject;
       for (var label in object.labels) {
-        if (label.confidence >= highestConfidence) {
-          highestConfidence = label.confidence;
+        highestConfidenceObject ??= label;
+        if (label.confidence >= highestConfidenceObject.confidence) {
+          highestConfidenceObject = label;
         }
       }
 
-      if (highestConfidence > 0) {
-        var highestConfidenceObjects = object.labels
-            .where((label) => label.confidence == highestConfidence);
-
-        if (!_checkIfProductIsInList(highestConfidenceObjects)) {
+      if (highestConfidenceObject != null) {
+        if (!_checkIfProductIsInList(highestConfidenceObject)) {
           _scannedProducts.add(ProductModel(
-            uid: highestConfidenceObjects.first.index.toString(),
-            name: highestConfidenceObjects.first.text,
+            uid: highestConfidenceObject.index.toString(),
+            name: highestConfidenceObject.text,
           ));
           emit(ScannerState.successfullyScannedObject(
-              highestConfidenceObjects.first.text));
+              highestConfidenceObject.text));
         }
       }
     }
     _scannedProducts;
   }
 
-  bool _checkIfProductIsInList(Iterable<Label> highestConfidenceObject) {
+  bool _checkIfProductIsInList(Label highestConfidenceObject) {
     return _scannedProducts.singleWhere(
-            (product) => product!.name == highestConfidenceObject.first.text,
+            (product) => product!.name == highestConfidenceObject.text,
             orElse: () => null) !=
         null;
   }
