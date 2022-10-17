@@ -27,4 +27,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cameraPermission => 'Camera permission';
+
+  @override
+  String hasBeenAdded(String product) {
+    return '$product has been added';
+  }
 }

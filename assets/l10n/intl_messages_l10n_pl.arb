@@ -6,5 +6,15 @@
   "weDoNotHaveAccessToYourCamera": "We don't have access to your camera. ",
   "youCanEnableAccessIn": "You can enable access in ",
   "privacySettings": "privacy settings",
-  "cameraPermission": "Camera permission"
+  "cameraPermission": "Camera permission",
+  "hasBeenAdded": "{product} has been added",
+  "@hasBeenAdded": {
+    "placeholders": {
+      "product": {
+        "type": "String",
+        "example": "Bread",
+        "description": "Product type"
+      }
+    }
+  }
 }

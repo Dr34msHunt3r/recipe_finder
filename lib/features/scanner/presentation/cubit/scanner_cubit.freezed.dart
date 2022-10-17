@@ -24,6 +24,7 @@ mixin _$ScannerState {
         ready,
     required TResult Function() cameraAccessDenied,
     required TResult Function() failure,
+    required TResult Function(String message) successfullyScannedObject,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +35,7 @@ mixin _$ScannerState {
         ready,
     TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
+    TResult Function(String message)? successfullyScannedObject,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +46,7 @@ mixin _$ScannerState {
         ready,
     TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
+    TResult Function(String message)? successfullyScannedObject,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +56,8 @@ mixin _$ScannerState {
     required TResult Function(_Ready value) ready,
     required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_SuccessfullyScannedObject value)
+        successfullyScannedObject,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +66,8 @@ mixin _$ScannerState {
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +76,8 @@ mixin _$ScannerState {
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -141,6 +150,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
         ready,
     required TResult Function() cameraAccessDenied,
     required TResult Function() failure,
+    required TResult Function(String message) successfullyScannedObject,
   }) {
     return initial();
   }
@@ -154,6 +164,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
         ready,
     TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
+    TResult Function(String message)? successfullyScannedObject,
   }) {
     return initial?.call();
   }
@@ -167,6 +178,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
         ready,
     TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
+    TResult Function(String message)? successfullyScannedObject,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -182,6 +194,8 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     required TResult Function(_Ready value) ready,
     required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_SuccessfullyScannedObject value)
+        successfullyScannedObject,
   }) {
     return initial(this);
   }
@@ -193,6 +207,8 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
   }) {
     return initial?.call(this);
   }
@@ -204,6 +220,8 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -306,6 +324,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
         ready,
     required TResult Function() cameraAccessDenied,
     required TResult Function() failure,
+    required TResult Function(String message) successfullyScannedObject,
   }) {
     return ready(cameraController, customPaint);
   }
@@ -319,6 +338,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
         ready,
     TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
+    TResult Function(String message)? successfullyScannedObject,
   }) {
     return ready?.call(cameraController, customPaint);
   }
@@ -332,6 +352,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
         ready,
     TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
+    TResult Function(String message)? successfullyScannedObject,
     required TResult orElse(),
   }) {
     if (ready != null) {
@@ -347,6 +368,8 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
     required TResult Function(_Ready value) ready,
     required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_SuccessfullyScannedObject value)
+        successfullyScannedObject,
   }) {
     return ready(this);
   }
@@ -358,6 +381,8 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
   }) {
     return ready?.call(this);
   }
@@ -369,6 +394,8 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
     required TResult orElse(),
   }) {
     if (ready != null) {
@@ -445,6 +472,7 @@ class _$_CameraAccessDenied
         ready,
     required TResult Function() cameraAccessDenied,
     required TResult Function() failure,
+    required TResult Function(String message) successfullyScannedObject,
   }) {
     return cameraAccessDenied();
   }
@@ -458,6 +486,7 @@ class _$_CameraAccessDenied
         ready,
     TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
+    TResult Function(String message)? successfullyScannedObject,
   }) {
     return cameraAccessDenied?.call();
   }
@@ -471,6 +500,7 @@ class _$_CameraAccessDenied
         ready,
     TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
+    TResult Function(String message)? successfullyScannedObject,
     required TResult orElse(),
   }) {
     if (cameraAccessDenied != null) {
@@ -486,6 +516,8 @@ class _$_CameraAccessDenied
     required TResult Function(_Ready value) ready,
     required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_SuccessfullyScannedObject value)
+        successfullyScannedObject,
   }) {
     return cameraAccessDenied(this);
   }
@@ -497,6 +529,8 @@ class _$_CameraAccessDenied
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
   }) {
     return cameraAccessDenied?.call(this);
   }
@@ -508,6 +542,8 @@ class _$_CameraAccessDenied
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
     required TResult orElse(),
   }) {
     if (cameraAccessDenied != null) {
@@ -573,6 +609,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
         ready,
     required TResult Function() cameraAccessDenied,
     required TResult Function() failure,
+    required TResult Function(String message) successfullyScannedObject,
   }) {
     return failure();
   }
@@ -586,6 +623,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
         ready,
     TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
+    TResult Function(String message)? successfullyScannedObject,
   }) {
     return failure?.call();
   }
@@ -599,6 +637,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
         ready,
     TResult Function()? cameraAccessDenied,
     TResult Function()? failure,
+    TResult Function(String message)? successfullyScannedObject,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -614,6 +653,8 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     required TResult Function(_Ready value) ready,
     required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_SuccessfullyScannedObject value)
+        successfullyScannedObject,
   }) {
     return failure(this);
   }
@@ -625,6 +666,8 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
   }) {
     return failure?.call(this);
   }
@@ -636,6 +679,8 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
     TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -647,4 +692,182 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
 
 abstract class _Failure implements ScannerState, ScannerListenerState {
   const factory _Failure() = _$_Failure;
+}
+
+/// @nodoc
+abstract class _$$_SuccessfullyScannedObjectCopyWith<$Res> {
+  factory _$$_SuccessfullyScannedObjectCopyWith(
+          _$_SuccessfullyScannedObject value,
+          $Res Function(_$_SuccessfullyScannedObject) then) =
+      __$$_SuccessfullyScannedObjectCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$_SuccessfullyScannedObjectCopyWithImpl<$Res>
+    extends _$ScannerStateCopyWithImpl<$Res>
+    implements _$$_SuccessfullyScannedObjectCopyWith<$Res> {
+  __$$_SuccessfullyScannedObjectCopyWithImpl(
+      _$_SuccessfullyScannedObject _value,
+      $Res Function(_$_SuccessfullyScannedObject) _then)
+      : super(_value, (v) => _then(v as _$_SuccessfullyScannedObject));
+
+  @override
+  _$_SuccessfullyScannedObject get _value =>
+      super._value as _$_SuccessfullyScannedObject;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$_SuccessfullyScannedObject(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SuccessfullyScannedObject
+    with DiagnosticableTreeMixin
+    implements _SuccessfullyScannedObject {
+  const _$_SuccessfullyScannedObject(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ScannerState.successfullyScannedObject(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'ScannerState.successfullyScannedObject'))
+      ..add(DiagnosticsProperty('message', message));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SuccessfullyScannedObject &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SuccessfullyScannedObjectCopyWith<_$_SuccessfullyScannedObject>
+      get copyWith => __$$_SuccessfullyScannedObjectCopyWithImpl<
+          _$_SuccessfullyScannedObject>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(
+            CameraController cameraController, CustomPaint? customPaint)
+        ready,
+    required TResult Function() cameraAccessDenied,
+    required TResult Function() failure,
+    required TResult Function(String message) successfullyScannedObject,
+  }) {
+    return successfullyScannedObject(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(
+            CameraController cameraController, CustomPaint? customPaint)?
+        ready,
+    TResult Function()? cameraAccessDenied,
+    TResult Function()? failure,
+    TResult Function(String message)? successfullyScannedObject,
+  }) {
+    return successfullyScannedObject?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(
+            CameraController cameraController, CustomPaint? customPaint)?
+        ready,
+    TResult Function()? cameraAccessDenied,
+    TResult Function()? failure,
+    TResult Function(String message)? successfullyScannedObject,
+    required TResult orElse(),
+  }) {
+    if (successfullyScannedObject != null) {
+      return successfullyScannedObject(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Ready value) ready,
+    required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
+    required TResult Function(_Failure value) failure,
+    required TResult Function(_SuccessfullyScannedObject value)
+        successfullyScannedObject,
+  }) {
+    return successfullyScannedObject(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Ready value)? ready,
+    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
+  }) {
+    return successfullyScannedObject?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Ready value)? ready,
+    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
+    required TResult orElse(),
+  }) {
+    if (successfullyScannedObject != null) {
+      return successfullyScannedObject(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessfullyScannedObject
+    implements ScannerState, ScannerListenerState {
+  const factory _SuccessfullyScannedObject(final String message) =
+      _$_SuccessfullyScannedObject;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$_SuccessfullyScannedObjectCopyWith<_$_SuccessfullyScannedObject>
+      get copyWith => throw _privateConstructorUsedError;
 }
