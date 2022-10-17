@@ -141,8 +141,8 @@ abstract class AppLocalizations {
   /// No description provided for @hasBeenAdded.
   ///
   /// In en, this message translates to:
-  /// **' has been added'**
-  String get hasBeenAdded;
+  /// **'{product} has been added'**
+  String hasBeenAdded(String product);
 }
 
 class _AppLocalizationsDelegate

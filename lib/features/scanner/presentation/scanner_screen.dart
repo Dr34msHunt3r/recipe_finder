@@ -26,7 +26,7 @@ class ScannerView extends StatelessWidget {
         listener: (_, state) => state.maybeWhen(
           orElse: () => null,
           successfullyScannedObject: (message) => AppToasts.showSuccessToast(
-              message: "$message${context.localizations.hasBeenAdded}"),
+              message: context.localizations.hasBeenAdded(message)),
         ),
         buildWhen: (_, state) => state is ScannerBuilderState,
         builder: (_, state) => state.maybeWhen(
