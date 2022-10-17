@@ -7,6 +7,7 @@ class AppColors {
   static const statusRed = Color(0xFFDF2E15);
   static const white = Color(0xFFFFFFFF);
   static const dark = Color(0xFF3D5253);
+  static const opacityWhite = Color(0xCCFFFFFF);
 
   // LOGO colors
   static const artyClickAmber = Color(0xFFFFBF00);
