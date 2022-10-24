@@ -8,7 +8,6 @@ class BaseScreen extends StatelessWidget {
       this.withTopPadding = true,
       this.withBottomPadding = true,
       this.customPadding,
-      this.withMainNavigation = false,
       this.customBackground,
       Key? key})
       : super(key: key);
@@ -17,12 +16,10 @@ class BaseScreen extends StatelessWidget {
   final EdgeInsets? customPadding;
   final bool withTopPadding;
   final bool withBottomPadding;
-  final bool withMainNavigation;
   final Color? customBackground;
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        floatingActionButton: withMainNavigation ? null : null,
         body: customBackground != null
             ? Container(
                 color: customBackground,
