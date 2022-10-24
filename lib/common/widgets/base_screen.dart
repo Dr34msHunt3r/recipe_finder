@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_finder/core/config/app_colors.dart';
 import 'package:recipe_finder/core/config/app_dimens.dart';
-import 'package:recipe_finder/features/main_navigation/presentation/main_navigation_widget.dart';
 
 class BaseScreen extends StatelessWidget {
   const BaseScreen(
@@ -23,8 +22,7 @@ class BaseScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        floatingActionButton:
-            withMainNavigation ? const MainNavigationWidget() : null,
+        floatingActionButton: withMainNavigation ? null : null,
         body: customBackground != null
             ? Container(
                 color: customBackground,

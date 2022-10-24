@@ -69,7 +69,7 @@ class App extends StatelessWidget {
         orElse: () => null,
         splashReady: () => widgetBinding.allowFirstFrame(),
         showWelcomePage: () => router.pushAndForget(
-          const ScannerRoute(),
+          const MainNavigationRouter(),
         ),
       );
     });
@@ -82,10 +82,10 @@ class App extends StatelessWidget {
       state.maybeWhen(
         orElse: () => null,
         showScannedProducts: () => router.push(
-          const ScannedProductsRoute(),
+          const ScannedProductsRouter(),
         ),
         showSettings: () => router.push(
-          const SettingsRoute(),
+          const SettingsRouter(),
         ),
       );
     });

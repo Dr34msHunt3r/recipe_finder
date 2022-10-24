@@ -48,7 +48,11 @@ class _Body extends StatelessWidget {
         ),
         buildWhen: (_, state) => state is SettingsBuilderState,
         builder: (_, state) => state.maybeWhen(
-          orElse: () => const Center(child: AppCircularProgressIndicator()),
+          orElse: () => const Center(
+            child: AppCircularProgressIndicator(
+              withBaseScreen: false,
+            ),
+          ),
           requestPermission: (value) => Column(
             children: [
               SettingsToggleButtonItem(
