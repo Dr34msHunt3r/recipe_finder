@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:recipe_finder/core/extension/app_router.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/core/routing/app_router.gr.dart';
-import 'package:recipe_finder/features/main_navigation/presentation/cubit/main_navigation_cubit.dart';
 import 'package:recipe_finder/features/scanner/presentation/cubit/scanner_cubit.dart';
 import 'package:recipe_finder/features/splash_screen/presentation/cubit/splash_cubit.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
@@ -27,24 +26,16 @@ class App extends StatelessWidget {
     final appConfig = context.appConfig;
     final splashCubit =
         getIt<SplashCubit>(param1: [LoadingTask(_preloadImageAssets)]);
-    final mainNavigationCubit = getIt<MainNavigationCubit>();
     final scannerCubit = getIt<ScannerCubit>()..init();
 
     _observeSplashStates(
       splashCubit: splashCubit,
     );
 
-    _observeMainNavigationStates(
-      mainNavigationCubit: mainNavigationCubit,
-    );
-
     return MultiProvider(
       providers: [
         BlocProvider<SplashCubit>(
           create: (_) => splashCubit,
-        ),
-        BlocProvider<MainNavigationCubit>(
-          create: (_) => mainNavigationCubit,
         ),
         BlocProvider<ScannerCubit>(
           create: (_) => scannerCubit,
@@ -70,22 +61,6 @@ class App extends StatelessWidget {
         splashReady: () => widgetBinding.allowFirstFrame(),
         showWelcomePage: () => router.pushAndForget(
           const MainNavigationRouter(),
-        ),
-      );
-    });
-  }
-
-  void _observeMainNavigationStates({
-    required MainNavigationCubit mainNavigationCubit,
-  }) {
-    mainNavigationCubit.stream.listen((state) {
-      state.maybeWhen(
-        orElse: () => null,
-        showScannedProducts: () => router.push(
-          const ScannedProductsRouter(),
-        ),
-        showSettings: () => router.push(
-          const SettingsRouter(),
         ),
       );
     });

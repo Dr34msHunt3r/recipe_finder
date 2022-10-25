@@ -14,8 +14,7 @@
 import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i7;
 
-import '../../features/main_navigation/presentation/main_navigation_widget.dart'
-    as _i3;
+import '../../common/widgets/main_navigation_widget.dart' as _i3;
 import '../../features/products/presentation/scanned_products_screen.dart'
     as _i5;
 import '../../features/scanner/presentation/scanner_screen.dart' as _i4;
