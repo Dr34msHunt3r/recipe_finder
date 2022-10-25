@@ -143,6 +143,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{product} has been added'**
   String hasBeenAdded(String product);
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @recipes.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipes'**
+  String get recipes;
 }
 
 class _AppLocalizationsDelegate

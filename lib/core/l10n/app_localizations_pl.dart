@@ -32,4 +32,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String hasBeenAdded(String product) {
     return '$product has been added';
   }
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get recipes => 'Recipes';
 }

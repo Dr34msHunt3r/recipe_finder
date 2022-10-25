@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:recipe_finder/core/config/app_dimens.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/core/routing/app_router.gr.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
@@ -13,36 +14,39 @@ class MainNavigationWidget extends StatelessWidget {
   Widget salomonBottomBarMenu(BuildContext context) => AutoTabsScaffold(
         routes: const [
           ScannerRouter(),
-          ScannedProductsRouter(),
+          ScannedProductsRouter(), // TODO: Exchange ScannedProductsRouter for RecipesRouter
           SettingsRouter(),
         ],
         bottomNavigationBuilder: (_, tabsRouter) {
           return SalomonBottomBar(
-            margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+            margin: const EdgeInsets.symmetric(
+              horizontal: AppDimens.extraLargerSpace_40,
+              vertical: AppDimens.subLargerSpace_20,
+            ),
             currentIndex: tabsRouter.activeIndex,
             onTap: tabsRouter.setActiveIndex,
             items: [
               SalomonBottomBarItem(
                 icon: const Icon(
-                  Icons.document_scanner_rounded,
-                  size: 30,
+                  Icons.home,
+                  size: AppDimens.extraLargeSpace_32,
                 ),
-                title: const Text('Scanner'),
+                title: Text(context.localizations.home),
               ),
               SalomonBottomBarItem(
                 icon: const Icon(
-                  Icons.assignment_turned_in_outlined,
-                  size: 30,
+                  Icons.receipt,
+                  size: AppDimens.extraLargeSpace_32,
                 ),
-                title: Text(context.localizations.scannedProducts),
+                title: Text(context.localizations.recipes),
               ),
               SalomonBottomBarItem(
                 icon: const Icon(
                   Icons.settings,
-                  size: 30,
+                  size: AppDimens.extraLargeSpace_32,
                 ),
                 title: Text(context.localizations.settings),
-              )
+              ),
             ],
           );
         },
