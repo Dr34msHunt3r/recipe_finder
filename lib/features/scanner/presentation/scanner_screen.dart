@@ -36,7 +36,6 @@ class ScannerView extends StatelessWidget {
           ready: (cameraController, customPainter) => BaseScreen(
             customBackground: AppColors.black,
             customPadding: EdgeInsets.zero,
-            withMainNavigation: true,
             child: _cameraView(context, cameraController, customPainter),
           ),
         ),
@@ -63,7 +62,6 @@ class ScannerView extends StatelessWidget {
   }
 
   Widget _noCameraPermissionsView(BuildContext context) => BaseScreen(
-        withMainNavigation: true,
         child: Center(
           child: Column(
             children: [

@@ -26,7 +26,6 @@ class SettingsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BaseScreen(
         customPadding: EdgeInsets.zero,
-        withMainNavigation: true,
         child: Column(
           children: [
             CustomizedAppbar(
@@ -48,7 +47,11 @@ class _Body extends StatelessWidget {
         ),
         buildWhen: (_, state) => state is SettingsBuilderState,
         builder: (_, state) => state.maybeWhen(
-          orElse: () => const Center(child: AppCircularProgressIndicator()),
+          orElse: () => const Center(
+            child: AppCircularProgressIndicator(
+              withBaseScreen: false,
+            ),
+          ),
           requestPermission: (value) => Column(
             children: [
               SettingsToggleButtonItem(
