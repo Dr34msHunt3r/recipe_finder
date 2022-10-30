@@ -38,4 +38,10 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get recipes => 'Recipes';
+
+  @override
+  String get recipeFinder => 'Recipe Finder';
+
+  @override
+  String get tapHereToScanIngredients => 'Tap here to scan ingredients';
 }

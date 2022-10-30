@@ -13,7 +13,7 @@ class MainNavigationWidget extends StatelessWidget {
 
   Widget salomonBottomBarMenu(BuildContext context) => AutoTabsScaffold(
         routes: const [
-          ScannerRouter(),
+          HomeRouter(),
           ScannedProductsRouter(), // TODO: Exchange ScannedProductsRouter for RecipesRouter
           SettingsRouter(),
         ],

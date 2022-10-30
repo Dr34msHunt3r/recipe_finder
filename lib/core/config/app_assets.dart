@@ -9,4 +9,7 @@ class AppAssets {
 
   //locked camera
   static const lockedCamera = "$_imagesPath/locked_camera.gif";
+
+  //app title
+  static const appTitle = "$_imagesPath/app_title.png";
 }

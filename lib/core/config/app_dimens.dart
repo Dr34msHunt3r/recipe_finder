@@ -30,4 +30,7 @@ class AppDimens {
   static const largerTextSize_24 = 24.0;
   static const extraLargeTextSize_32 = 32.0;
   static const hugeTextSize_40 = 40.0;
+
+  // MARK: Icon sizes
+  static const hugeIconSize_150 = 150.0;
 }
