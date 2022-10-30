@@ -32,5 +32,7 @@ class AppDimens {
   static const hugeTextSize_40 = 40.0;
 
   // MARK: Icon sizes
+  static const normalIconSize_24 = 24.0;
+  static const mediumIconSize_32 = 32.0;
   static const hugeIconSize_150 = 150.0;
 }
