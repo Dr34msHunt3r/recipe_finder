@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,7 +37,12 @@ class ScannerView extends StatelessWidget {
           ready: (cameraController, customPainter) => BaseScreen(
             customBackground: AppColors.black,
             customPadding: EdgeInsets.zero,
-            child: _cameraView(context, cameraController, customPainter),
+            child: Stack(
+              children: [
+                _cameraView(context, cameraController, customPainter),
+                _backArrowButton(context),
+              ],
+            ),
           ),
         ),
       );
@@ -121,6 +127,21 @@ class ScannerView extends StatelessWidget {
               ),
             ],
           ),
+        ),
+      );
+
+  Widget _backArrowButton(BuildContext context) => Positioned(
+        top: AppDimens.subLargerSpace_20,
+        left: AppDimens.subLargerSpace_20,
+        child: GestureDetector(
+          child: const Icon(
+            Icons.arrow_back,
+            size: AppDimens.mediumIconSize_32,
+            color: AppColors.opacityWhite,
+          ),
+          onTap: () {
+            context.router.pop();
+          },
         ),
       );
 }
