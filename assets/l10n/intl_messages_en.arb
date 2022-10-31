@@ -18,5 +18,7 @@
     }
   },
   "home": "Home",
-  "recipes": "Recipes"
+  "recipes": "Recipes",
+  "recipeFinder": "Recipe Finder",
+  "tapHereToScanIngredients": "Tap here to scan ingredients"
 }

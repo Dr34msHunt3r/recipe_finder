@@ -1,7 +1,7 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:recipe_finder/common/widgets/main_navigation_widget.dart';
 import 'package:recipe_finder/features/products/presentation/scanned_products_screen.dart';
+import 'package:recipe_finder/features/scanner/presentation/home_screen.dart';
 import 'package:recipe_finder/features/scanner/presentation/scanner_screen.dart';
 import 'package:recipe_finder/features/settings/presentation/settings_screen.dart';
 import 'package:recipe_finder/features/splash_screen/presentation/splash_screen.dart';
@@ -24,13 +24,13 @@ import 'package:recipe_finder/features/splash_screen/presentation/splash_screen.
           page: MainNavigationWidget,
           children: [
             AutoRoute(
-              path: 'scanner',
-              name: 'ScannerRouter',
+              path: 'home',
+              name: 'HomeRouter',
               page: EmptyRouterPage,
               children: [
                 AutoRoute(
                   path: '',
-                  page: ScannerScreen,
+                  page: HomeScreen,
                 ),
               ],
             ),
@@ -55,6 +55,17 @@ import 'package:recipe_finder/features/splash_screen/presentation/splash_screen.
                   page: SettingsScreen,
                 ),
               ],
+            ),
+          ],
+        ),
+        AutoRoute(
+          path: 'scanner',
+          name: 'ScannerRouter',
+          page: EmptyRouterPage,
+          children: [
+            AutoRoute(
+              path: '',
+              page: ScannerScreen,
             ),
           ],
         ),

@@ -12,17 +12,18 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i1;
-import 'package:flutter/material.dart' as _i7;
+import 'package:flutter/material.dart' as _i8;
 
 import '../../common/widgets/main_navigation_widget.dart' as _i3;
 import '../../features/products/presentation/scanned_products_screen.dart'
     as _i5;
-import '../../features/scanner/presentation/scanner_screen.dart' as _i4;
+import '../../features/scanner/presentation/home_screen.dart' as _i4;
+import '../../features/scanner/presentation/scanner_screen.dart' as _i7;
 import '../../features/settings/presentation/settings_screen.dart' as _i6;
 import '../../features/splash_screen/presentation/splash_screen.dart' as _i2;
 
 class AppRouter extends _i1.RootStackRouter {
-  AppRouter([_i7.GlobalKey<_i7.NavigatorState>? navigatorKey])
+  AppRouter([_i8.GlobalKey<_i8.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
@@ -43,6 +44,10 @@ class AppRouter extends _i1.RootStackRouter {
       return _i1.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i1.EmptyRouterPage());
     },
+    HomeRouter.name: (routeData) {
+      return _i1.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i1.EmptyRouterPage());
+    },
     ScannedProductsRouter.name: (routeData) {
       return _i1.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i1.EmptyRouterPage());
@@ -51,9 +56,9 @@ class AppRouter extends _i1.RootStackRouter {
       return _i1.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i1.EmptyRouterPage());
     },
-    ScannerScreen.name: (routeData) {
+    HomeScreen.name: (routeData) {
       return _i1.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i4.ScannerScreen());
+          routeData: routeData, child: const _i4.HomeScreen());
     },
     ScannedProductsScreen.name: (routeData) {
       return _i1.MaterialPageX<dynamic>(
@@ -62,6 +67,10 @@ class AppRouter extends _i1.RootStackRouter {
     SettingsScreen.name: (routeData) {
       return _i1.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i6.SettingsScreen());
+    },
+    ScannerScreen.name: (routeData) {
+      return _i1.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i7.ScannerScreen());
     }
   };
 
@@ -74,12 +83,12 @@ class AppRouter extends _i1.RootStackRouter {
               path: 'home',
               parent: EmptyRouterRoute.name,
               children: [
-                _i1.RouteConfig(ScannerRouter.name,
-                    path: 'scanner',
+                _i1.RouteConfig(HomeRouter.name,
+                    path: 'home',
                     parent: MainNavigationRouter.name,
                     children: [
-                      _i1.RouteConfig(ScannerScreen.name,
-                          path: '', parent: ScannerRouter.name)
+                      _i1.RouteConfig(HomeScreen.name,
+                          path: '', parent: HomeRouter.name)
                     ]),
                 _i1.RouteConfig(ScannedProductsRouter.name,
                     path: 'scanned-products',
@@ -95,6 +104,13 @@ class AppRouter extends _i1.RootStackRouter {
                       _i1.RouteConfig(SettingsScreen.name,
                           path: '', parent: SettingsRouter.name)
                     ])
+              ]),
+          _i1.RouteConfig(ScannerRouter.name,
+              path: 'scanner',
+              parent: EmptyRouterRoute.name,
+              children: [
+                _i1.RouteConfig(ScannerScreen.name,
+                    path: '', parent: ScannerRouter.name)
               ])
         ])
       ];
@@ -138,6 +154,15 @@ class ScannerRouter extends _i1.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i1.EmptyRouterPage]
+class HomeRouter extends _i1.PageRouteInfo<void> {
+  const HomeRouter({List<_i1.PageRouteInfo>? children})
+      : super(HomeRouter.name, path: 'home', initialChildren: children);
+
+  static const String name = 'HomeRouter';
+}
+
+/// generated route for
+/// [_i1.EmptyRouterPage]
 class ScannedProductsRouter extends _i1.PageRouteInfo<void> {
   const ScannedProductsRouter({List<_i1.PageRouteInfo>? children})
       : super(ScannedProductsRouter.name,
@@ -156,11 +181,11 @@ class SettingsRouter extends _i1.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.ScannerScreen]
-class ScannerScreen extends _i1.PageRouteInfo<void> {
-  const ScannerScreen() : super(ScannerScreen.name, path: '');
+/// [_i4.HomeScreen]
+class HomeScreen extends _i1.PageRouteInfo<void> {
+  const HomeScreen() : super(HomeScreen.name, path: '');
 
-  static const String name = 'ScannerScreen';
+  static const String name = 'HomeScreen';
 }
 
 /// generated route for
@@ -177,4 +202,12 @@ class SettingsScreen extends _i1.PageRouteInfo<void> {
   const SettingsScreen() : super(SettingsScreen.name, path: '');
 
   static const String name = 'SettingsScreen';
+}
+
+/// generated route for
+/// [_i7.ScannerScreen]
+class ScannerScreen extends _i1.PageRouteInfo<void> {
+  const ScannerScreen() : super(ScannerScreen.name, path: '');
+
+  static const String name = 'ScannerScreen';
 }

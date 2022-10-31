@@ -3,17 +3,27 @@ import 'package:recipe_finder/core/config/app_colors.dart';
 import 'package:recipe_finder/core/config/app_dimens.dart';
 
 class CustomizedAppbar extends StatelessWidget {
-  const CustomizedAppbar({required this.title, Key? key}) : super(key: key);
+  const CustomizedAppbar({required this.title, Key? key, this.imageTitlePath})
+      : super(key: key);
   final String title;
+  final String? imageTitlePath;
 
   @override
   Widget build(BuildContext context) => SizedBox(
         height: AppDimens.hugerSpace_56,
         child: AppBar(
           centerTitle: true,
-          title: Text(
-            title,
-          ),
+          title: imageTitlePath != null
+              ? SizedBox(
+                  child: Image.asset(
+                    imageTitlePath!,
+                    fit: BoxFit.none,
+                    alignment: Alignment.center,
+                  ),
+                )
+              : Text(
+                  title,
+                ),
           titleTextStyle: const TextStyle(
             color: AppColors.primaryText,
             fontSize: AppDimens.bigTextSize_20,

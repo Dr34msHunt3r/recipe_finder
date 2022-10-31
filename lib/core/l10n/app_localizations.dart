@@ -155,6 +155,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Recipes'**
   String get recipes;
+
+  /// No description provided for @recipeFinder.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipe Finder'**
+  String get recipeFinder;
+
+  /// No description provided for @tapHereToScanIngredients.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap here to scan ingredients'**
+  String get tapHereToScanIngredients;
 }
 
 class _AppLocalizationsDelegate
