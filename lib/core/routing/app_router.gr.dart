@@ -80,7 +80,7 @@ class AppRouter extends _i1.RootStackRouter {
           _i1.RouteConfig(SplashRouter.name,
               path: '', parent: EmptyRouterRoute.name),
           _i1.RouteConfig(MainNavigationRouter.name,
-              path: 'home',
+              path: '',
               parent: EmptyRouterRoute.name,
               children: [
                 _i1.RouteConfig(HomeRouter.name,
@@ -137,8 +137,7 @@ class SplashRouter extends _i1.PageRouteInfo<void> {
 /// [_i3.MainNavigationWidget]
 class MainNavigationRouter extends _i1.PageRouteInfo<void> {
   const MainNavigationRouter({List<_i1.PageRouteInfo>? children})
-      : super(MainNavigationRouter.name,
-            path: 'home', initialChildren: children);
+      : super(MainNavigationRouter.name, path: '', initialChildren: children);
 
   static const String name = 'MainNavigationRouter';
 }
