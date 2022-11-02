@@ -5,6 +5,7 @@ import 'package:recipe_finder/common/widgets/base_screen.dart';
 import 'package:recipe_finder/core/config/app_assets.dart';
 import 'package:recipe_finder/core/config/app_colors.dart';
 import 'package:recipe_finder/core/config/app_dimens.dart';
+import 'package:recipe_finder/core/config/app_paths.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -74,7 +75,7 @@ class _ScannerContentWidget extends StatelessWidget {
         ),
         onTap: () {
           context.router.pushNamed(
-            'scanner',
+            AppPaths.scannerPath,
           );
         },
       );

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:recipe_finder/common/widgets/main_navigation_widget.dart';
+import 'package:recipe_finder/core/config/app_paths.dart';
 import 'package:recipe_finder/features/products/presentation/scanned_products_screen.dart';
 import 'package:recipe_finder/features/scanner/presentation/home_screen.dart';
 import 'package:recipe_finder/features/scanner/presentation/scanner_screen.dart';
@@ -7,51 +8,51 @@ import 'package:recipe_finder/features/settings/presentation/settings_screen.dar
 import 'package:recipe_finder/features/splash_screen/presentation/splash_screen.dart';
 
 @MaterialAutoRouter(
-  replaceInRouteName: 'Page,Route',
+  replaceInRouteName: AppPaths.replaceInRouteName,
   routes: <AutoRoute>[
     AutoRoute(
-      path: '/',
+      path: AppPaths.initialPath,
       page: EmptyRouterPage,
       children: [
         AutoRoute(
-          path: '',
-          name: 'SplashRouter',
+          path: AppPaths.emptyPath,
+          name: AppPaths.splashName,
           page: SplashScreen,
         ),
         AutoRoute(
-          path: 'home',
-          name: 'MainNavigationRouter',
+          path: AppPaths.emptyPath,
+          name: AppPaths.mainNavigationName,
           page: MainNavigationWidget,
           children: [
             AutoRoute(
-              path: 'home',
-              name: 'HomeRouter',
+              path: AppPaths.homePath,
+              name: AppPaths.homeName,
               page: EmptyRouterPage,
               children: [
                 AutoRoute(
-                  path: '',
+                  path: AppPaths.emptyPath,
                   page: HomeScreen,
                 ),
               ],
             ),
             AutoRoute(
-              path: 'scanned-products',
-              name: 'ScannedProductsRouter',
+              path: AppPaths.scannedProductsPath,
+              name: AppPaths.scannedProductsName,
               page: EmptyRouterPage,
               children: [
                 AutoRoute(
-                  path: '',
+                  path: AppPaths.emptyPath,
                   page: ScannedProductsScreen,
                 ),
               ],
             ),
             AutoRoute(
-              path: 'settings',
-              name: 'SettingsRouter',
+              path: AppPaths.settingsPath,
+              name: AppPaths.settingsName,
               page: EmptyRouterPage,
               children: [
                 AutoRoute(
-                  path: '',
+                  path: AppPaths.emptyPath,
                   page: SettingsScreen,
                 ),
               ],
@@ -59,12 +60,12 @@ import 'package:recipe_finder/features/splash_screen/presentation/splash_screen.
           ],
         ),
         AutoRoute(
-          path: 'scanner',
-          name: 'ScannerRouter',
+          path: AppPaths.scannerPath,
+          name: AppPaths.scannerName,
           page: EmptyRouterPage,
           children: [
             AutoRoute(
-              path: '',
+              path: AppPaths.emptyPath,
               page: ScannerScreen,
             ),
           ],
