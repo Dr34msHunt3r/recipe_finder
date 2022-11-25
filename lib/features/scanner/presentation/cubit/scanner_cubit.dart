@@ -189,9 +189,10 @@ class ScannerCubit extends Cubit<ScannerState> {
 
   @override
   Future<void> close() {
-    _cameraController.dispose();
-    _cameraController.stopImageStream();
     _canProcess = false;
+    _cameraController.stopImageStream().then(
+          (_) => _cameraController.dispose(),
+        );
     _objectDetector.close();
     return super.close();
   }
