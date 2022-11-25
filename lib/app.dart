@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:recipe_finder/core/extension/app_router.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/core/routing/app_router.gr.dart';
-import 'package:recipe_finder/features/scanner/presentation/cubit/scanner_cubit.dart';
 import 'package:recipe_finder/features/splash_screen/presentation/cubit/splash_cubit.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
@@ -26,7 +25,6 @@ class App extends StatelessWidget {
     final appConfig = context.appConfig;
     final splashCubit =
         getIt<SplashCubit>(param1: [LoadingTask(_preloadImageAssets)]);
-    final scannerCubit = getIt<ScannerCubit>()..init();
 
     _observeSplashStates(
       splashCubit: splashCubit,
@@ -36,9 +34,6 @@ class App extends StatelessWidget {
       providers: [
         BlocProvider<SplashCubit>(
           create: (_) => splashCubit,
-        ),
-        BlocProvider<ScannerCubit>(
-          create: (_) => scannerCubit,
         ),
       ],
       child: MaterialApp.router(

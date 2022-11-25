@@ -11,12 +11,16 @@ import 'package:recipe_finder/core/config/app_toast.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/features/scanner/presentation/cubit/scanner_cubit.dart';
 import 'package:recipe_finder/features/settings/presentation/settings_screen.dart';
+import 'package:recipe_finder/injectable/injectable.dart';
 
 class ScannerScreen extends StatelessWidget {
   const ScannerScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => const ScannerView();
+  Widget build(BuildContext context) => BlocProvider(
+        create: (_) => getIt<ScannerCubit>()..init(),
+        child: const ScannerView(),
+      );
 }
 
 class ScannerView extends StatelessWidget {
