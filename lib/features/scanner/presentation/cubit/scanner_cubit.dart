@@ -88,6 +88,7 @@ class ScannerCubit extends Cubit<ScannerState> {
           inputImage.inputImageData!.size);
       _customPaint = CustomPaint(painter: painter);
       _addScannedProducts(objects);
+      if (!_canProcess) return;
       emit(ScannerState.ready(_cameraController, _customPaint));
     }
     _isBusy = false;
@@ -155,6 +156,7 @@ class ScannerCubit extends Cubit<ScannerState> {
   }
 
   void _addScannedProducts(List<DetectedObject> objects) {
+    if (!_canProcess) return;
     for (var object in objects) {
       Label? highestConfidenceObject;
       for (var label in object.labels) {
