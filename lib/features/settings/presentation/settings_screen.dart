@@ -6,7 +6,6 @@ import 'package:recipe_finder/common/widgets/base_screen.dart';
 import 'package:recipe_finder/core/config/app_colors.dart';
 import 'package:recipe_finder/core/config/app_dimens.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
-import 'package:recipe_finder/features/scanner/presentation/cubit/scanner_cubit.dart';
 import 'package:recipe_finder/features/settings/presentation/cubit/settings_cubit.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
@@ -43,7 +42,6 @@ class _Body extends StatelessWidget {
       BlocConsumer<SettingsCubit, SettingsState>(
         listener: (_, state) => state.maybeWhen(
           orElse: () => null,
-          permissionGranted: () => context.read<ScannerCubit>().init(),
         ),
         buildWhen: (_, state) => state is SettingsBuilderState,
         builder: (_, state) => state.maybeWhen(

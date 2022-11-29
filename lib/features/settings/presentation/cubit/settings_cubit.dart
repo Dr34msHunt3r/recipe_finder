@@ -28,7 +28,6 @@ class SettingsCubit extends Cubit<SettingsState> {
 
     if (_permissionStatus.isGranted) {
       emit(const SettingsState.requestPermission(true));
-      emit(const SettingsState.permissionGranted());
     } else if (Platform.isIOS || _permissionStatus.isPermanentlyDenied) {
       openAppSettings();
       emit(const SettingsState.requestPermission(false));

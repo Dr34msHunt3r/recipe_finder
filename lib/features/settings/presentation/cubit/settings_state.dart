@@ -7,9 +7,6 @@ class SettingsState with _$SettingsState {
   @Implements<SettingsBuilderState>()
   const factory SettingsState.requestPermission(bool value) =
       _RequestPermission;
-
-  @Implements<SettingsListenerState>()
-  const factory SettingsState.permissionGranted() = _PermissionGranted;
 }
 
 abstract class SettingsBuilderState {}
