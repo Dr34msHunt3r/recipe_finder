@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:recipe_finder/common/widgets/app_circular_progress_indicator.dart';
 import 'package:recipe_finder/common/widgets/appbar.dart';
 import 'package:recipe_finder/common/widgets/base_screen.dart';
 import 'package:recipe_finder/core/config/app_colors.dart';
@@ -38,38 +37,29 @@ class SettingsView extends StatelessWidget {
 
 class _Body extends StatelessWidget {
   @override
-  Widget build(BuildContext context) =>
-      BlocConsumer<SettingsCubit, SettingsState>(
-        listener: (_, state) => state.maybeWhen(
-          orElse: () => null,
-        ),
-        buildWhen: (_, state) => state is SettingsBuilderState,
-        builder: (_, state) => state.maybeWhen(
-          orElse: () => const Center(
-            child: AppCircularProgressIndicator(
-              withBaseScreen: false,
-            ),
-          ),
-          requestPermission: (value) => Column(
-            children: [
-              SettingsToggleButtonItem(
+  Widget build(BuildContext context) => Column(
+        children: [
+          BlocBuilder<SettingsCubit, SettingsState>(
+            builder: (_, state) => state.maybeWhen(
+              orElse: () => const SizedBox.shrink(),
+              requestPermission: (value) => SettingsDetailsButtonItem(
                 permissionStatus: value,
                 optionTitle: context.localizations.cameraPermission,
                 icon: const Icon(
                   Icons.camera_alt,
                   color: AppColors.paleOrange,
                 ),
-                onChanged: (value) =>
+                onChanged: () =>
                     context.read<SettingsCubit>().requestPermission(),
               ),
-            ],
+            ),
           ),
-        ),
+        ],
       );
 }
 
-class SettingsToggleButtonItem extends StatelessWidget {
-  const SettingsToggleButtonItem(
+class SettingsDetailsButtonItem extends StatelessWidget {
+  const SettingsDetailsButtonItem(
       {required this.permissionStatus,
       required this.optionTitle,
       required this.icon,
@@ -80,34 +70,47 @@ class SettingsToggleButtonItem extends StatelessWidget {
   final bool permissionStatus;
   final String optionTitle;
   final Icon icon;
-  final Function(bool) onChanged;
+  final Function() onChanged;
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(
-          left: AppDimens.mediumSpace_8,
-          top: AppDimens.mediumSpace_8,
-          right: AppDimens.mediumSpace_8,
-        ),
-        child: Row(
-          children: [
-            icon,
-            const SizedBox(
-              width: AppDimens.mediumSpace_8,
-            ),
-            Text(
-              optionTitle,
-              style: const TextStyle(
-                color: AppColors.primaryText,
-                fontSize: AppDimens.normalTextSize_16,
+  Widget build(BuildContext context) => GestureDetector(
+        onTap: onChanged,
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: AppDimens.mediumSpace_8,
+            top: AppDimens.bigSpace_12,
+            right: AppDimens.mediumSpace_8,
+          ),
+          child: Row(
+            children: [
+              icon,
+              const SizedBox(
+                width: AppDimens.mediumSpace_8,
               ),
-            ),
-            const Spacer(),
-            Switch.adaptive(
-              value: permissionStatus,
-              onChanged: onChanged,
-            ),
-          ],
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    optionTitle,
+                    style: const TextStyle(
+                      color: AppColors.primaryText,
+                      fontSize: AppDimens.normalTextSize_16,
+                    ),
+                  ),
+                  Text(
+                    permissionStatus
+                        ? 'Permission allowed'
+                        : 'Permission denied',
+                    style: const TextStyle(
+                      color: AppColors.secondaryText,
+                      fontSize: AppDimens.smallTextSize_14,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       );
 }
