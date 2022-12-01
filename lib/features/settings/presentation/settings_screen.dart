@@ -43,7 +43,6 @@ class _Body extends StatelessWidget {
             builder: (_, state) => state.maybeWhen(
               orElse: () => const SizedBox.shrink(),
               requestPermission: (value) => SettingsDetailsButtonItem(
-                permissionStatus: value,
                 optionTitle: context.localizations.cameraPermission,
                 icon: const Icon(
                   Icons.camera_alt,
@@ -51,6 +50,9 @@ class _Body extends StatelessWidget {
                 ),
                 onChanged: () =>
                     context.read<SettingsCubit>().requestPermission(),
+                isFirstDetail: value,
+                firstDetail: context.localizations.permissionAllowed,
+                secondDetail: context.localizations.permissionDenied,
               ),
             ),
           ),
@@ -60,16 +62,20 @@ class _Body extends StatelessWidget {
 
 class SettingsDetailsButtonItem extends StatelessWidget {
   const SettingsDetailsButtonItem(
-      {required this.permissionStatus,
-      required this.optionTitle,
+      {required this.optionTitle,
       required this.icon,
       required this.onChanged,
+      required this.firstDetail,
+      required this.secondDetail,
+      required this.isFirstDetail,
       Key? key})
       : super(key: key);
 
-  final bool permissionStatus;
   final String optionTitle;
+  final bool isFirstDetail;
   final Icon icon;
+  final String firstDetail;
+  final String secondDetail;
   final Function() onChanged;
 
   @override
@@ -99,9 +105,7 @@ class SettingsDetailsButtonItem extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    permissionStatus
-                        ? 'Permission allowed'
-                        : 'Permission denied',
+                    isFirstDetail ? firstDetail : secondDetail,
                     style: const TextStyle(
                       color: AppColors.secondaryText,
                       fontSize: AppDimens.smallTextSize_14,
