@@ -167,6 +167,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tap here to scan ingredients'**
   String get tapHereToScanIngredients;
+
+  /// No description provided for @permissionAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Permission allowed'**
+  String get permissionAllowed;
+
+  /// No description provided for @permissionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Permission denied'**
+  String get permissionDenied;
 }
 
 class _AppLocalizationsDelegate

@@ -44,4 +44,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tapHereToScanIngredients => 'Tap here to scan ingredients';
+
+  @override
+  String get permissionAllowed => 'Permission allowed';
+
+  @override
+  String get permissionDenied => 'Permission denied';
 }

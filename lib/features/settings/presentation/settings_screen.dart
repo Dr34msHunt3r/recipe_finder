@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:recipe_finder/common/widgets/app_circular_progress_indicator.dart';
 import 'package:recipe_finder/common/widgets/appbar.dart';
 import 'package:recipe_finder/common/widgets/base_screen.dart';
 import 'package:recipe_finder/core/config/app_colors.dart';
 import 'package:recipe_finder/core/config/app_dimens.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
-import 'package:recipe_finder/features/scanner/presentation/cubit/scanner_cubit.dart';
 import 'package:recipe_finder/features/settings/presentation/cubit/settings_cubit.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
@@ -39,77 +37,84 @@ class SettingsView extends StatelessWidget {
 
 class _Body extends StatelessWidget {
   @override
-  Widget build(BuildContext context) =>
-      BlocConsumer<SettingsCubit, SettingsState>(
-        listener: (_, state) => state.maybeWhen(
-          orElse: () => null,
-          permissionGranted: () => context.read<ScannerCubit>().init(),
-        ),
-        buildWhen: (_, state) => state is SettingsBuilderState,
-        builder: (_, state) => state.maybeWhen(
-          orElse: () => const Center(
-            child: AppCircularProgressIndicator(
-              withBaseScreen: false,
-            ),
-          ),
-          requestPermission: (value) => Column(
-            children: [
-              SettingsToggleButtonItem(
-                permissionStatus: value,
+  Widget build(BuildContext context) => Column(
+        children: [
+          BlocBuilder<SettingsCubit, SettingsState>(
+            builder: (_, state) => state.maybeWhen(
+              orElse: () => const SizedBox.shrink(),
+              requestPermission: (value) => SettingsDetailsButtonItem(
                 optionTitle: context.localizations.cameraPermission,
                 icon: const Icon(
                   Icons.camera_alt,
                   color: AppColors.paleOrange,
                 ),
-                onChanged: (value) =>
+                onChanged: () =>
                     context.read<SettingsCubit>().requestPermission(),
+                isFirstDetail: value,
+                firstDetail: context.localizations.permissionAllowed,
+                secondDetail: context.localizations.permissionDenied,
               ),
-            ],
+            ),
           ),
-        ),
+        ],
       );
 }
 
-class SettingsToggleButtonItem extends StatelessWidget {
-  const SettingsToggleButtonItem(
-      {required this.permissionStatus,
-      required this.optionTitle,
+class SettingsDetailsButtonItem extends StatelessWidget {
+  const SettingsDetailsButtonItem(
+      {required this.optionTitle,
       required this.icon,
       required this.onChanged,
+      required this.firstDetail,
+      required this.secondDetail,
+      required this.isFirstDetail,
       Key? key})
       : super(key: key);
 
-  final bool permissionStatus;
   final String optionTitle;
+  final bool isFirstDetail;
   final Icon icon;
-  final Function(bool) onChanged;
+  final String firstDetail;
+  final String secondDetail;
+  final Function() onChanged;
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(
-          left: AppDimens.mediumSpace_8,
-          top: AppDimens.mediumSpace_8,
-          right: AppDimens.mediumSpace_8,
-        ),
-        child: Row(
-          children: [
-            icon,
-            const SizedBox(
-              width: AppDimens.mediumSpace_8,
-            ),
-            Text(
-              optionTitle,
-              style: const TextStyle(
-                color: AppColors.primaryText,
-                fontSize: AppDimens.normalTextSize_16,
+  Widget build(BuildContext context) => GestureDetector(
+        onTap: onChanged,
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: AppDimens.mediumSpace_8,
+            top: AppDimens.bigSpace_12,
+            right: AppDimens.mediumSpace_8,
+          ),
+          child: Row(
+            children: [
+              icon,
+              const SizedBox(
+                width: AppDimens.mediumSpace_8,
               ),
-            ),
-            const Spacer(),
-            Switch.adaptive(
-              value: permissionStatus,
-              onChanged: onChanged,
-            ),
-          ],
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    optionTitle,
+                    style: const TextStyle(
+                      color: AppColors.primaryText,
+                      fontSize: AppDimens.normalTextSize_16,
+                    ),
+                  ),
+                  Text(
+                    isFirstDetail ? firstDetail : secondDetail,
+                    style: const TextStyle(
+                      color: AppColors.secondaryText,
+                      fontSize: AppDimens.smallTextSize_14,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       );
 }
