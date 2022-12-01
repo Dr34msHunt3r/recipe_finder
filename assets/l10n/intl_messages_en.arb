@@ -20,5 +20,7 @@
   "home": "Home",
   "recipes": "Recipes",
   "recipeFinder": "Recipe Finder",
-  "tapHereToScanIngredients": "Tap here to scan ingredients"
+  "tapHereToScanIngredients": "Tap here to scan ingredients",
+  "permissionAllowed": "Permission allowed",
+  "permissionDenied": "Permission denied"
 }
