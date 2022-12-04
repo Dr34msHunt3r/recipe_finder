@@ -20,21 +20,18 @@ mixin _$SettingsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool value) requestPermission,
-    required TResult Function() permissionGranted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool value)? requestPermission,
-    TResult Function()? permissionGranted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool value)? requestPermission,
-    TResult Function()? permissionGranted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -42,21 +39,18 @@ mixin _$SettingsState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_RequestPermission value) requestPermission,
-    required TResult Function(_PermissionGranted value) permissionGranted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_RequestPermission value)? requestPermission,
-    TResult Function(_PermissionGranted value)? permissionGranted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_RequestPermission value)? requestPermission,
-    TResult Function(_PermissionGranted value)? permissionGranted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,7 +114,6 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool value) requestPermission,
-    required TResult Function() permissionGranted,
   }) {
     return initial();
   }
@@ -130,7 +123,6 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool value)? requestPermission,
-    TResult Function()? permissionGranted,
   }) {
     return initial?.call();
   }
@@ -140,7 +132,6 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool value)? requestPermission,
-    TResult Function()? permissionGranted,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -154,7 +145,6 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_RequestPermission value) requestPermission,
-    required TResult Function(_PermissionGranted value) permissionGranted,
   }) {
     return initial(this);
   }
@@ -164,7 +154,6 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_RequestPermission value)? requestPermission,
-    TResult Function(_PermissionGranted value)? permissionGranted,
   }) {
     return initial?.call(this);
   }
@@ -174,7 +163,6 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_RequestPermission value)? requestPermission,
-    TResult Function(_PermissionGranted value)? permissionGranted,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -256,7 +244,6 @@ class _$_RequestPermission implements _RequestPermission {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool value) requestPermission,
-    required TResult Function() permissionGranted,
   }) {
     return requestPermission(value);
   }
@@ -266,7 +253,6 @@ class _$_RequestPermission implements _RequestPermission {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool value)? requestPermission,
-    TResult Function()? permissionGranted,
   }) {
     return requestPermission?.call(value);
   }
@@ -276,7 +262,6 @@ class _$_RequestPermission implements _RequestPermission {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool value)? requestPermission,
-    TResult Function()? permissionGranted,
     required TResult orElse(),
   }) {
     if (requestPermission != null) {
@@ -290,7 +275,6 @@ class _$_RequestPermission implements _RequestPermission {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_RequestPermission value) requestPermission,
-    required TResult Function(_PermissionGranted value) permissionGranted,
   }) {
     return requestPermission(this);
   }
@@ -300,7 +284,6 @@ class _$_RequestPermission implements _RequestPermission {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_RequestPermission value)? requestPermission,
-    TResult Function(_PermissionGranted value)? permissionGranted,
   }) {
     return requestPermission?.call(this);
   }
@@ -310,7 +293,6 @@ class _$_RequestPermission implements _RequestPermission {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_RequestPermission value)? requestPermission,
-    TResult Function(_PermissionGranted value)? permissionGranted,
     required TResult orElse(),
   }) {
     if (requestPermission != null) {
@@ -328,116 +310,4 @@ abstract class _RequestPermission
   @JsonKey(ignore: true)
   _$$_RequestPermissionCopyWith<_$_RequestPermission> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_PermissionGrantedCopyWith<$Res> {
-  factory _$$_PermissionGrantedCopyWith(_$_PermissionGranted value,
-          $Res Function(_$_PermissionGranted) then) =
-      __$$_PermissionGrantedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_PermissionGrantedCopyWithImpl<$Res>
-    extends _$SettingsStateCopyWithImpl<$Res>
-    implements _$$_PermissionGrantedCopyWith<$Res> {
-  __$$_PermissionGrantedCopyWithImpl(
-      _$_PermissionGranted _value, $Res Function(_$_PermissionGranted) _then)
-      : super(_value, (v) => _then(v as _$_PermissionGranted));
-
-  @override
-  _$_PermissionGranted get _value => super._value as _$_PermissionGranted;
-}
-
-/// @nodoc
-
-class _$_PermissionGranted implements _PermissionGranted {
-  const _$_PermissionGranted();
-
-  @override
-  String toString() {
-    return 'SettingsState.permissionGranted()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_PermissionGranted);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(bool value) requestPermission,
-    required TResult Function() permissionGranted,
-  }) {
-    return permissionGranted();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(bool value)? requestPermission,
-    TResult Function()? permissionGranted,
-  }) {
-    return permissionGranted?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(bool value)? requestPermission,
-    TResult Function()? permissionGranted,
-    required TResult orElse(),
-  }) {
-    if (permissionGranted != null) {
-      return permissionGranted();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_RequestPermission value) requestPermission,
-    required TResult Function(_PermissionGranted value) permissionGranted,
-  }) {
-    return permissionGranted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_RequestPermission value)? requestPermission,
-    TResult Function(_PermissionGranted value)? permissionGranted,
-  }) {
-    return permissionGranted?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_RequestPermission value)? requestPermission,
-    TResult Function(_PermissionGranted value)? permissionGranted,
-    required TResult orElse(),
-  }) {
-    if (permissionGranted != null) {
-      return permissionGranted(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PermissionGranted
-    implements SettingsState, SettingsListenerState {
-  const factory _PermissionGranted() = _$_PermissionGranted;
 }
