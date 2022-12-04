@@ -3,6 +3,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe_finder/app.dart';
 import 'package:recipe_finder/core/config/app_config.dart';
+import 'package:recipe_finder/core/config/firebase/firebase_config.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
 void main() async {
@@ -11,7 +12,7 @@ void main() async {
   await configureDependencies();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await initialization();
-
+  await configureFirebaseApp();
   runApp(
     Provider<AppConfig>(
       create: (context) => AppConfig(

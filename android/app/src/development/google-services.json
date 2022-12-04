@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "124489417142",
+    "project_id": "recipe-finder-15733",
+    "storage_bucket": "recipe-finder-15733.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124489417142:android:e1609aef1db4df57648117",
+        "android_client_info": {
+          "package_name": "com.example.recipe_finder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124489417142-k307dveh5cnbmhln45ugi3bge7nf2ubj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeVA7an1Tnb9FCLFBNYyQg3FPUjvCzfwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124489417142-k307dveh5cnbmhln45ugi3bge7nf2ubj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124489417142:android:9bc0bd2200899400648117",
+        "android_client_info": {
+          "package_name": "com.example.recipe_finder.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124489417142-k307dveh5cnbmhln45ugi3bge7nf2ubj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeVA7an1Tnb9FCLFBNYyQg3FPUjvCzfwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124489417142-k307dveh5cnbmhln45ugi3bge7nf2ubj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
