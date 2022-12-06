@@ -33,6 +33,10 @@ dependencies:
   injectable: ^1.5.3
   injectable_generator: ^1.5.4
 
+  # firebase
+  firebase_core: ^2.3.0
+  flutterfire_cli: ^0.2.7
+
   # utils
   build_runner: ^2.2.0
   flutter_native_splash: ^2.2.7
