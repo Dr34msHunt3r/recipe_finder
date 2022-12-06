@@ -21,6 +21,7 @@ dependencies:
   auto_route: ^4.2.1
 
   # state management
+  bloc: ^8.1.0
   flutter_bloc: ^8.0.1
   provider: ^6.0.3
 
@@ -36,6 +37,7 @@ dependencies:
   # firebase
   firebase_core: ^2.3.0
   flutterfire_cli: ^0.2.7
+  firebase_crashlytics: ^3.0.6
 
   # utils
   build_runner: ^2.2.0
@@ -47,6 +49,7 @@ dependencies:
   permission_handler: ^10.0.0
   fluttertoast: ^8.0.9
   salomon_bottom_bar: ^3.3.1
+  logger: ^1.1.0
 
 dev_dependencies:
   flutter_test:
