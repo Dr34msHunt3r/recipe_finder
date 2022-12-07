@@ -60,7 +60,6 @@ _i1.GetIt $initGetIt(
   gh.factory<_i9.StdOutErrorTracker>(
       () => _i9.StdOutErrorTracker(logger: get<_i5.Logger>()));
   gh.factory<List<_i10.ErrorTracker>>(() => crashlyticsModule.getErrorTrackers(
-        get<dynamic>(),
         get<_i4.FirebaseErrorTracker>(),
         get<_i9.StdOutErrorTracker>(),
       ));
