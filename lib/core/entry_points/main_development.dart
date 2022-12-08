@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:provider/provider.dart';
 import 'package:recipe_finder/app.dart';
-import 'package:recipe_finder/core/config/app_config.dart';
+import 'package:recipe_finder/bootstrap.dart';
 import 'package:recipe_finder/core/config/firebase/firebase_config.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
@@ -13,14 +12,8 @@ void main() async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await initialization();
   await configureFirebaseApp();
-  runApp(
-    Provider<AppConfig>(
-      create: (context) => AppConfig(
-        appTitle: "Recipe Finder Dev",
-      ),
-      lazy: false,
-      child: App(widgetsBinding),
-    ),
+  await bootstrap(
+    () => App(widgetsBinding),
   );
 }
 

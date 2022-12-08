@@ -118,18 +118,12 @@ class __$$_InitialCopyWithImpl<$Res> extends _$ScannerStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initial with DiagnosticableTreeMixin implements _Initial {
+class _$_Initial implements _Initial {
   const _$_Initial();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ScannerState.initial()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'ScannerState.initial'));
   }
 
   @override
@@ -271,7 +265,7 @@ class __$$_ReadyCopyWithImpl<$Res> extends _$ScannerStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Ready with DiagnosticableTreeMixin implements _Ready {
+class _$_Ready implements _Ready {
   const _$_Ready(this.cameraController, this.customPaint);
 
   @override
@@ -280,17 +274,8 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
   final CustomPaint? customPaint;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ScannerState.ready(cameraController: $cameraController, customPaint: $customPaint)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ScannerState.ready'))
-      ..add(DiagnosticsProperty('cameraController', cameraController))
-      ..add(DiagnosticsProperty('customPaint', customPaint));
   }
 
   @override
@@ -437,21 +422,12 @@ class __$$_CameraAccessDeniedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CameraAccessDenied
-    with DiagnosticableTreeMixin
-    implements _CameraAccessDenied {
+class _$_CameraAccessDenied implements _CameraAccessDenied {
   const _$_CameraAccessDenied();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ScannerState.cameraAccessDenied()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-        .add(DiagnosticsProperty('type', 'ScannerState.cameraAccessDenied'));
   }
 
   @override
@@ -577,18 +553,12 @@ class __$$_FailureCopyWithImpl<$Res> extends _$ScannerStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Failure with DiagnosticableTreeMixin implements _Failure {
+class _$_Failure implements _Failure {
   const _$_Failure();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ScannerState.failure()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'ScannerState.failure'));
   }
 
   @override
@@ -731,26 +701,15 @@ class __$$_SuccessfullyScannedObjectCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SuccessfullyScannedObject
-    with DiagnosticableTreeMixin
-    implements _SuccessfullyScannedObject {
+class _$_SuccessfullyScannedObject implements _SuccessfullyScannedObject {
   const _$_SuccessfullyScannedObject(this.message);
 
   @override
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ScannerState.successfullyScannedObject(message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'ScannerState.successfullyScannedObject'))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
