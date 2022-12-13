@@ -1,7 +1,7 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:recipe_finder/common/data_source/crashlytics/error_tracker.dart';
+import 'package:recipe_finder/data_source/crashlytics/error_tracker.dart';
 
 @injectable
 class FirebaseErrorTracker extends ErrorTracker {

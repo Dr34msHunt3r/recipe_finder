@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:recipe_finder/common/data_source/crashlytics/error_tracker.dart';
+import 'package:recipe_finder/data_source/crashlytics/error_tracker.dart';
 import 'package:recipe_finder/domain/crashlytics/crashlytics_repository.dart';
 
 @Injectable(as: CrashlyticsRepository)

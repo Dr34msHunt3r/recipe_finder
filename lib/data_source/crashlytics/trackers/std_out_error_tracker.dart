@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
-import 'package:recipe_finder/common/data_source/crashlytics/error_tracker.dart';
+import 'package:recipe_finder/data_source/crashlytics/error_tracker.dart';
 
 @injectable
 class StdOutErrorTracker extends ErrorTracker {
