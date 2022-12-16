@@ -9,8 +9,8 @@ import 'package:recipe_finder/injectable/injectable.dart';
 void main() async {
   final WidgetsBinding widgetsBinding =
       WidgetsFlutterBinding.ensureInitialized();
-  configureDependencies(
-    environment: EnvironmentName.development,
+  await configureDependencies(
+    environment: EnvironmentName.staging,
   );
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await initialization();

@@ -65,11 +65,19 @@ android {
         }
     }
 
-    flavorDimensions "app"
+    flavorDimensions "default"
     productFlavors {
         development {
-            dimension "app"
+            dimension "default"
             applicationId "com.example.recipe_finder.dev"
+        }
+        staging {
+            dimension "default"
+            applicationId "com.example.recipe_finder.staging"
+        }
+        production {
+            dimension "default"
+            applicationId "com.example.recipe_finder.prod"
         }
     }
 }
