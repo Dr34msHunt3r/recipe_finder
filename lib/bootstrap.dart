@@ -21,6 +21,17 @@ class AppBlocObserver extends BlocObserver {
   final ScreenTrackerUseCase screenTrackerUseCase;
 
   @override
+  void onCreate(BlocBase<dynamic> bloc) {
+    log('onCreate(${bloc.runtimeType})');
+    ScreenTrackerNames screenName = getScreenName(bloc);
+    screenTrackerUseCase.trackScreen(
+      screenName: screenName,
+      screenClass: screenName.rawName,
+    );
+    super.onCreate(bloc);
+  }
+
+  @override
   void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
     log('onChange(${bloc.runtimeType}, $change)');
     super.onChange(bloc, change);
@@ -34,6 +45,16 @@ class AppBlocObserver extends BlocObserver {
       stackTrace: stackTrace,
     );
     super.onError(bloc, error, stackTrace);
+  }
+
+  ScreenTrackerNames getScreenName(BlocBase<dynamic> bloc) {
+    final String basePhrase =
+        bloc.runtimeType.toString().replaceAll('Cubit', '');
+    final screenName = ScreenTrackerNames.values.firstWhere(
+      (screenTrackerName) => screenTrackerName.rawName.contains(basePhrase),
+      orElse: () => ScreenTrackerNames.unclassified,
+    );
+    return screenName;
   }
 }
 
