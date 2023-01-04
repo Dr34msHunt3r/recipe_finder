@@ -21,8 +21,10 @@ class ScreenTrackerUseCase {
 }
 
 enum ScreenTrackerNames {
-  splash('Splash_screen'),
-  home('Home');
+  unclassified('Unclassified Screen'),
+  splash('SplashScreen'),
+  home('HomeScreen'),
+  settings('SettingsScreen');
 
   const ScreenTrackerNames(this.rawName);
 
