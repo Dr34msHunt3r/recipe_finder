@@ -34,6 +34,12 @@ class AppBlocObserver extends BlocObserver {
   @override
   void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
     log('onChange(${bloc.runtimeType}, $change)');
+    EventTrackerNames? eventName = getEventName(change, bloc);
+    if (eventName != null) {
+      eventTrackerUseCase.trackEvent(
+        eventName: eventName,
+      );
+    }
     super.onChange(bloc, change);
   }
 
@@ -55,6 +61,18 @@ class AppBlocObserver extends BlocObserver {
       orElse: () => ScreenTrackerNames.unclassified,
     );
     return screenName;
+  }
+
+  EventTrackerNames? getEventName(
+      Change<dynamic> change, BlocBase<dynamic> bloc) {
+    EventTrackerNames? eventName;
+    if (change.nextState.toString() == 'SplashState.showWelcomePage()') {
+      eventName = EventTrackerNames.appInitialized;
+    } else if (bloc.runtimeType.toString() == 'SettingsCubit' &&
+        change.currentState != change.nextState) {
+      eventName = EventTrackerNames.changedSettings;
+    }
+    return eventName;
   }
 }
 
