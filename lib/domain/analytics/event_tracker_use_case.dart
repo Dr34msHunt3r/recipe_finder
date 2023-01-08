@@ -21,7 +21,8 @@ class EventTrackerUseCase {
 }
 
 enum EventTrackerNames {
-  appInitialized('App_successfully_initialized');
+  appInitialized('App_successfully_initialized'),
+  changedSettings('Settings_has_been_changed');
 
   const EventTrackerNames(this.rawName);
 
