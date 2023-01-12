@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipe_finder/common/widgets/appbar.dart';
 import 'package:recipe_finder/common/widgets/base_screen.dart';
 import 'package:recipe_finder/core/config/app_assets.dart';
@@ -7,12 +8,17 @@ import 'package:recipe_finder/core/config/app_colors.dart';
 import 'package:recipe_finder/core/config/app_dimens.dart';
 import 'package:recipe_finder/core/config/app_paths.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
+import 'package:recipe_finder/features/home/presentation/cubit/home_cubit.dart';
+import 'package:recipe_finder/injectable/injectable.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => const HomeView();
+  Widget build(BuildContext context) => BlocProvider(
+        create: (BuildContext context) => getIt<HomeCubit>(),
+        child: const HomeView(),
+      );
 }
 
 class HomeView extends StatelessWidget {
