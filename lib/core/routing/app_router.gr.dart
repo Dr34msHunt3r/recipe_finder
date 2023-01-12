@@ -15,9 +15,9 @@ import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i8;
 
 import '../../common/widgets/main_navigation_widget.dart' as _i3;
+import '../../features/home/presentation/home_screen.dart' as _i4;
 import '../../features/products/presentation/scanned_products_screen.dart'
     as _i5;
-import '../../features/scanner/presentation/home_screen.dart' as _i4;
 import '../../features/scanner/presentation/scanner_screen.dart' as _i7;
 import '../../features/settings/presentation/settings_screen.dart' as _i6;
 import '../../features/splash_screen/presentation/splash_screen.dart' as _i2;
