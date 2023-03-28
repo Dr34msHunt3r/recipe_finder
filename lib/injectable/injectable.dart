@@ -1,16 +1,18 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:recipe_finder/injectable/enviroment.dart';
-
-import 'injectable.config.dart';
+import 'package:recipe_finder/injectable/injectable.config.dart';
 
 final getIt = GetIt.instance;
 
-@InjectableInit()
+@InjectableInit(
+  preferRelativeImports: false,
+  asExtension: false,
+)
 Future<void> configureDependencies({
   String environment = EnvironmentName.development,
 }) async =>
-    $initGetIt(
+    getIt.init(
       getIt,
       environment: environment,
     );
