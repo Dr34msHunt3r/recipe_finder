@@ -14,8 +14,8 @@ class AppPaths {
   // Router: Paths
   static const initialPath = "/";
   static const emptyPath = "";
-  static const homePath = "home";
-  static const scannedProductsPath = "scanned-products";
-  static const settingsPath = "settings";
-  static const scannerPath = "scanner";
+  static const homePath = "/home";
+  static const scannedProductsPath = "/scanned-products";
+  static const settingsPath = "/settings";
+  static const scannerPath = "/scanner";
 }
