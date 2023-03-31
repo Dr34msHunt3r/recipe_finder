@@ -9,10 +9,10 @@ final getIt = GetIt.instance;
   preferRelativeImports: false,
   asExtension: false,
 )
-Future<void> configureDependencies({
+GetIt configureDependencies({
   String environment = EnvironmentName.development,
-}) async =>
-    getIt.init(
+}) =>
+    init(
       getIt,
       environment: environment,
     );
