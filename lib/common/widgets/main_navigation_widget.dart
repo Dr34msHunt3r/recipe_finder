@@ -1,10 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_finder/core/config/app_dimens.dart';
+import 'package:recipe_finder/core/config/app_paths.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/core/routing/app_router.gr.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
+@RoutePage(name: AppPaths.mainNavigationName)
 class MainNavigationWidget extends StatelessWidget {
   const MainNavigationWidget({Key? key}) : super(key: key);
 
@@ -13,9 +15,9 @@ class MainNavigationWidget extends StatelessWidget {
 
   Widget salomonBottomBarMenu(BuildContext context) => AutoTabsScaffold(
         routes: const [
-          HomeRouter(),
-          ScannedProductsRouter(), // TODO: Exchange ScannedProductsRouter for RecipesRouter
-          SettingsRouter(),
+          HomeScreen(),
+          ScannedProductsScreen(), // TODO: Exchange ScannedProductsRouter for RecipesRouter
+          SettingsScreen(),
         ],
         bottomNavigationBuilder: (_, tabsRouter) {
           return SalomonBottomBar(

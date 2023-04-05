@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'splash_cubit.dart';
 
@@ -26,10 +26,10 @@ mixin _$SplashState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? splashReady,
-    TResult Function()? showWelcomePage,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? splashReady,
+    TResult? Function()? showWelcomePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$SplashState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SplashReady value)? splashReady,
-    TResult Function(_ShowWelcomePage value)? showWelcomePage,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SplashReady value)? splashReady,
+    TResult? Function(_ShowWelcomePage value)? showWelcomePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,16 +72,18 @@ mixin _$SplashState {
 abstract class $SplashStateCopyWith<$Res> {
   factory $SplashStateCopyWith(
           SplashState value, $Res Function(SplashState) then) =
-      _$SplashStateCopyWithImpl<$Res>;
+      _$SplashStateCopyWithImpl<$Res, SplashState>;
 }
 
 /// @nodoc
-class _$SplashStateCopyWithImpl<$Res> implements $SplashStateCopyWith<$Res> {
+class _$SplashStateCopyWithImpl<$Res, $Val extends SplashState>
+    implements $SplashStateCopyWith<$Res> {
   _$SplashStateCopyWithImpl(this._value, this._then);
 
-  final SplashState _value;
   // ignore: unused_field
-  final $Res Function(SplashState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -92,13 +94,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$SplashStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$SplashStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -134,10 +134,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? splashReady,
-    TResult Function()? showWelcomePage,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? splashReady,
+    TResult? Function()? showWelcomePage,
   }) {
     return initial?.call();
   }
@@ -171,10 +171,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SplashReady value)? splashReady,
-    TResult Function(_ShowWelcomePage value)? showWelcomePage,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SplashReady value)? splashReady,
+    TResult? Function(_ShowWelcomePage value)? showWelcomePage,
   }) {
     return initial?.call(this);
   }
@@ -207,13 +207,11 @@ abstract class _$$_LoadingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res> extends _$SplashStateCopyWithImpl<$Res>
+class __$$_LoadingCopyWithImpl<$Res>
+    extends _$SplashStateCopyWithImpl<$Res, _$_Loading>
     implements _$$_LoadingCopyWith<$Res> {
   __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
-      : super(_value, (v) => _then(v as _$_Loading));
-
-  @override
-  _$_Loading get _value => super._value as _$_Loading;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -249,10 +247,10 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? splashReady,
-    TResult Function()? showWelcomePage,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? splashReady,
+    TResult? Function()? showWelcomePage,
   }) {
     return loading?.call();
   }
@@ -286,10 +284,10 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SplashReady value)? splashReady,
-    TResult Function(_ShowWelcomePage value)? showWelcomePage,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SplashReady value)? splashReady,
+    TResult? Function(_ShowWelcomePage value)? showWelcomePage,
   }) {
     return loading?.call(this);
   }
@@ -322,14 +320,12 @@ abstract class _$$_SplashReadyCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SplashReadyCopyWithImpl<$Res> extends _$SplashStateCopyWithImpl<$Res>
+class __$$_SplashReadyCopyWithImpl<$Res>
+    extends _$SplashStateCopyWithImpl<$Res, _$_SplashReady>
     implements _$$_SplashReadyCopyWith<$Res> {
   __$$_SplashReadyCopyWithImpl(
       _$_SplashReady _value, $Res Function(_$_SplashReady) _then)
-      : super(_value, (v) => _then(v as _$_SplashReady));
-
-  @override
-  _$_SplashReady get _value => super._value as _$_SplashReady;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -365,10 +361,10 @@ class _$_SplashReady implements _SplashReady {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? splashReady,
-    TResult Function()? showWelcomePage,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? splashReady,
+    TResult? Function()? showWelcomePage,
   }) {
     return splashReady?.call();
   }
@@ -402,10 +398,10 @@ class _$_SplashReady implements _SplashReady {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SplashReady value)? splashReady,
-    TResult Function(_ShowWelcomePage value)? showWelcomePage,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SplashReady value)? splashReady,
+    TResult? Function(_ShowWelcomePage value)? showWelcomePage,
   }) {
     return splashReady?.call(this);
   }
@@ -439,14 +435,11 @@ abstract class _$$_ShowWelcomePageCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ShowWelcomePageCopyWithImpl<$Res>
-    extends _$SplashStateCopyWithImpl<$Res>
+    extends _$SplashStateCopyWithImpl<$Res, _$_ShowWelcomePage>
     implements _$$_ShowWelcomePageCopyWith<$Res> {
   __$$_ShowWelcomePageCopyWithImpl(
       _$_ShowWelcomePage _value, $Res Function(_$_ShowWelcomePage) _then)
-      : super(_value, (v) => _then(v as _$_ShowWelcomePage));
-
-  @override
-  _$_ShowWelcomePage get _value => super._value as _$_ShowWelcomePage;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -482,10 +475,10 @@ class _$_ShowWelcomePage implements _ShowWelcomePage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? splashReady,
-    TResult Function()? showWelcomePage,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? splashReady,
+    TResult? Function()? showWelcomePage,
   }) {
     return showWelcomePage?.call();
   }
@@ -519,10 +512,10 @@ class _$_ShowWelcomePage implements _ShowWelcomePage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SplashReady value)? splashReady,
-    TResult Function(_ShowWelcomePage value)? showWelcomePage,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SplashReady value)? splashReady,
+    TResult? Function(_ShowWelcomePage value)? showWelcomePage,
   }) {
     return showWelcomePage?.call(this);
   }

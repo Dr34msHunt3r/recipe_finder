@@ -11,6 +11,7 @@ import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/features/home/presentation/cubit/home_cubit.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
+@RoutePage()
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 

@@ -1,77 +1,48 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:recipe_finder/common/widgets/main_navigation_widget.dart';
+import 'package:injectable/injectable.dart';
 import 'package:recipe_finder/core/config/app_paths.dart';
-import 'package:recipe_finder/features/home/presentation/home_screen.dart';
-import 'package:recipe_finder/features/products/presentation/scanned_products_screen.dart';
-import 'package:recipe_finder/features/scanner/presentation/scanner_screen.dart';
-import 'package:recipe_finder/features/settings/presentation/settings_screen.dart';
-import 'package:recipe_finder/features/splash_screen/presentation/splash_screen.dart';
 
-@MaterialAutoRouter(
+import 'app_router.gr.dart';
+
+@AutoRouterConfig(
   replaceInRouteName: AppPaths.replaceInRouteName,
-  routes: <AutoRoute>[
+)
+@Singleton()
+class AppRouter extends $AppRouter {
+  @override
+  RouteType get defaultRouteType => const RouteType.material();
+
+  @override
+  final List<AutoRoute> routes = [
     AutoRoute(
+      page: SplashRouter.page,
       path: AppPaths.initialPath,
-      page: EmptyRouterPage,
+    ),
+    AutoRoute(
+      page: MainNavigationRouter.page,
+      path: AppPaths.dashboardPath,
       children: [
-        AutoRoute(
-          path: AppPaths.emptyPath,
-          name: AppPaths.splashName,
-          page: SplashScreen,
+        RedirectRoute(
+          path: '',
+          redirectTo: AppPaths.homePath,
         ),
         AutoRoute(
-          path: AppPaths.emptyPath,
-          name: AppPaths.mainNavigationName,
-          page: MainNavigationWidget,
-          children: [
-            AutoRoute(
-              path: AppPaths.homePath,
-              name: AppPaths.homeName,
-              page: EmptyRouterPage,
-              children: [
-                AutoRoute(
-                  path: AppPaths.emptyPath,
-                  page: HomeScreen,
-                ),
-              ],
-            ),
-            AutoRoute(
-              path: AppPaths.scannedProductsPath,
-              name: AppPaths.scannedProductsName,
-              page: EmptyRouterPage,
-              children: [
-                AutoRoute(
-                  path: AppPaths.emptyPath,
-                  page: ScannedProductsScreen,
-                ),
-              ],
-            ),
-            AutoRoute(
-              path: AppPaths.settingsPath,
-              name: AppPaths.settingsName,
-              page: EmptyRouterPage,
-              children: [
-                AutoRoute(
-                  path: AppPaths.emptyPath,
-                  page: SettingsScreen,
-                ),
-              ],
-            ),
-          ],
+          page: HomeScreen.page,
+          path: AppPaths.homePath,
         ),
         AutoRoute(
-          path: AppPaths.scannerPath,
-          name: AppPaths.scannerName,
-          page: EmptyRouterPage,
-          children: [
-            AutoRoute(
-              path: AppPaths.emptyPath,
-              page: ScannerScreen,
-            ),
-          ],
+          page: ScannedProductsScreen.page,
+          path: AppPaths.scannedProductsPath,
+        ),
+        AutoRoute(
+          path: AppPaths.settingsPath,
+          page: SettingsScreen.page,
         ),
       ],
     ),
-  ],
-)
-class $AppRouter {}
+    AutoRoute(
+      path: AppPaths.scannerPath,
+      page: ScannerScreen.page,
+    ),
+  ];
+}

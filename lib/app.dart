@@ -7,15 +7,15 @@ import 'package:recipe_finder/features/splash_screen/presentation/cubit/splash_c
 import 'package:recipe_finder/injectable/injectable.dart';
 
 import 'core/l10n/app_localizations.dart';
+import 'core/routing/app_router.dart';
 
 class App extends StatelessWidget {
+  final WidgetsBinding widgetBinding;
+  AppRouter get router => getIt.get<AppRouter>();
+
   App(this.widgetBinding, {Key? key}) : super(key: key) {
     widgetBinding.deferFirstFrame();
-    getIt.registerSingleton<AppRouter>(AppRouter());
   }
-
-  final WidgetsBinding widgetBinding;
-  AppRouter get router => getIt<AppRouter>();
 
   Future<void> _preloadImageAssets(BuildContext context) async {}
 

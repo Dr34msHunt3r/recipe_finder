@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'scanner_cubit.dart';
 
@@ -29,13 +29,13 @@ mixin _$ScannerState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(
+    TResult? Function()? initial,
+    TResult? Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
-    TResult Function()? cameraAccessDenied,
-    TResult Function()? failure,
-    TResult Function(String message)? successfullyScannedObject,
+    TResult? Function()? cameraAccessDenied,
+    TResult? Function()? failure,
+    TResult? Function(String message)? successfullyScannedObject,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,11 +62,11 @@ mixin _$ScannerState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Ready value)? ready,
-    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_SuccessfullyScannedObject value)?
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Ready value)? ready,
+    TResult? Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
   }) =>
       throw _privateConstructorUsedError;
@@ -87,16 +87,18 @@ mixin _$ScannerState {
 abstract class $ScannerStateCopyWith<$Res> {
   factory $ScannerStateCopyWith(
           ScannerState value, $Res Function(ScannerState) then) =
-      _$ScannerStateCopyWithImpl<$Res>;
+      _$ScannerStateCopyWithImpl<$Res, ScannerState>;
 }
 
 /// @nodoc
-class _$ScannerStateCopyWithImpl<$Res> implements $ScannerStateCopyWith<$Res> {
+class _$ScannerStateCopyWithImpl<$Res, $Val extends ScannerState>
+    implements $ScannerStateCopyWith<$Res> {
   _$ScannerStateCopyWithImpl(this._value, this._then);
 
-  final ScannerState _value;
   // ignore: unused_field
-  final $Res Function(ScannerState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -107,23 +109,27 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$ScannerStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$ScannerStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
+class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   const _$_Initial();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ScannerState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'ScannerState.initial'));
   }
 
   @override
@@ -152,13 +158,13 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(
+    TResult? Function()? initial,
+    TResult? Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
-    TResult Function()? cameraAccessDenied,
-    TResult Function()? failure,
-    TResult Function(String message)? successfullyScannedObject,
+    TResult? Function()? cameraAccessDenied,
+    TResult? Function()? failure,
+    TResult? Function(String message)? successfullyScannedObject,
   }) {
     return initial?.call();
   }
@@ -197,11 +203,11 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Ready value)? ready,
-    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_SuccessfullyScannedObject value)?
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Ready value)? ready,
+    TResult? Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
   }) {
     return initial?.call(this);
@@ -233,29 +239,29 @@ abstract class _Initial implements ScannerState {
 abstract class _$$_ReadyCopyWith<$Res> {
   factory _$$_ReadyCopyWith(_$_Ready value, $Res Function(_$_Ready) then) =
       __$$_ReadyCopyWithImpl<$Res>;
+  @useResult
   $Res call({CameraController cameraController, CustomPaint? customPaint});
 }
 
 /// @nodoc
-class __$$_ReadyCopyWithImpl<$Res> extends _$ScannerStateCopyWithImpl<$Res>
+class __$$_ReadyCopyWithImpl<$Res>
+    extends _$ScannerStateCopyWithImpl<$Res, _$_Ready>
     implements _$$_ReadyCopyWith<$Res> {
   __$$_ReadyCopyWithImpl(_$_Ready _value, $Res Function(_$_Ready) _then)
-      : super(_value, (v) => _then(v as _$_Ready));
+      : super(_value, _then);
 
-  @override
-  _$_Ready get _value => super._value as _$_Ready;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cameraController = freezed,
+    Object? cameraController = null,
     Object? customPaint = freezed,
   }) {
     return _then(_$_Ready(
-      cameraController == freezed
+      null == cameraController
           ? _value.cameraController
           : cameraController // ignore: cast_nullable_to_non_nullable
               as CameraController,
-      customPaint == freezed
+      freezed == customPaint
           ? _value.customPaint
           : customPaint // ignore: cast_nullable_to_non_nullable
               as CustomPaint?,
@@ -265,7 +271,7 @@ class __$$_ReadyCopyWithImpl<$Res> extends _$ScannerStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Ready implements _Ready {
+class _$_Ready with DiagnosticableTreeMixin implements _Ready {
   const _$_Ready(this.cameraController, this.customPaint);
 
   @override
@@ -274,8 +280,17 @@ class _$_Ready implements _Ready {
   final CustomPaint? customPaint;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ScannerState.ready(cameraController: $cameraController, customPaint: $customPaint)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ScannerState.ready'))
+      ..add(DiagnosticsProperty('cameraController', cameraController))
+      ..add(DiagnosticsProperty('customPaint', customPaint));
   }
 
   @override
@@ -283,20 +298,18 @@ class _$_Ready implements _Ready {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Ready &&
-            const DeepCollectionEquality()
-                .equals(other.cameraController, cameraController) &&
-            const DeepCollectionEquality()
-                .equals(other.customPaint, customPaint));
+            (identical(other.cameraController, cameraController) ||
+                other.cameraController == cameraController) &&
+            (identical(other.customPaint, customPaint) ||
+                other.customPaint == customPaint));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(cameraController),
-      const DeepCollectionEquality().hash(customPaint));
+  int get hashCode => Object.hash(runtimeType, cameraController, customPaint);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ReadyCopyWith<_$_Ready> get copyWith =>
       __$$_ReadyCopyWithImpl<_$_Ready>(this, _$identity);
 
@@ -317,13 +330,13 @@ class _$_Ready implements _Ready {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(
+    TResult? Function()? initial,
+    TResult? Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
-    TResult Function()? cameraAccessDenied,
-    TResult Function()? failure,
-    TResult Function(String message)? successfullyScannedObject,
+    TResult? Function()? cameraAccessDenied,
+    TResult? Function()? failure,
+    TResult? Function(String message)? successfullyScannedObject,
   }) {
     return ready?.call(cameraController, customPaint);
   }
@@ -362,11 +375,11 @@ class _$_Ready implements _Ready {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Ready value)? ready,
-    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_SuccessfullyScannedObject value)?
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Ready value)? ready,
+    TResult? Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
   }) {
     return ready?.call(this);
@@ -410,24 +423,30 @@ abstract class _$$_CameraAccessDeniedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_CameraAccessDeniedCopyWithImpl<$Res>
-    extends _$ScannerStateCopyWithImpl<$Res>
+    extends _$ScannerStateCopyWithImpl<$Res, _$_CameraAccessDenied>
     implements _$$_CameraAccessDeniedCopyWith<$Res> {
   __$$_CameraAccessDeniedCopyWithImpl(
       _$_CameraAccessDenied _value, $Res Function(_$_CameraAccessDenied) _then)
-      : super(_value, (v) => _then(v as _$_CameraAccessDenied));
-
-  @override
-  _$_CameraAccessDenied get _value => super._value as _$_CameraAccessDenied;
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_CameraAccessDenied implements _CameraAccessDenied {
+class _$_CameraAccessDenied
+    with DiagnosticableTreeMixin
+    implements _CameraAccessDenied {
   const _$_CameraAccessDenied();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ScannerState.cameraAccessDenied()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'ScannerState.cameraAccessDenied'));
   }
 
   @override
@@ -456,13 +475,13 @@ class _$_CameraAccessDenied implements _CameraAccessDenied {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(
+    TResult? Function()? initial,
+    TResult? Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
-    TResult Function()? cameraAccessDenied,
-    TResult Function()? failure,
-    TResult Function(String message)? successfullyScannedObject,
+    TResult? Function()? cameraAccessDenied,
+    TResult? Function()? failure,
+    TResult? Function(String message)? successfullyScannedObject,
   }) {
     return cameraAccessDenied?.call();
   }
@@ -501,11 +520,11 @@ class _$_CameraAccessDenied implements _CameraAccessDenied {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Ready value)? ready,
-    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_SuccessfullyScannedObject value)?
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Ready value)? ready,
+    TResult? Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
   }) {
     return cameraAccessDenied?.call(this);
@@ -542,23 +561,27 @@ abstract class _$$_FailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_FailureCopyWithImpl<$Res> extends _$ScannerStateCopyWithImpl<$Res>
+class __$$_FailureCopyWithImpl<$Res>
+    extends _$ScannerStateCopyWithImpl<$Res, _$_Failure>
     implements _$$_FailureCopyWith<$Res> {
   __$$_FailureCopyWithImpl(_$_Failure _value, $Res Function(_$_Failure) _then)
-      : super(_value, (v) => _then(v as _$_Failure));
-
-  @override
-  _$_Failure get _value => super._value as _$_Failure;
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Failure implements _Failure {
+class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   const _$_Failure();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ScannerState.failure()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'ScannerState.failure'));
   }
 
   @override
@@ -587,13 +610,13 @@ class _$_Failure implements _Failure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(
+    TResult? Function()? initial,
+    TResult? Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
-    TResult Function()? cameraAccessDenied,
-    TResult Function()? failure,
-    TResult Function(String message)? successfullyScannedObject,
+    TResult? Function()? cameraAccessDenied,
+    TResult? Function()? failure,
+    TResult? Function(String message)? successfullyScannedObject,
   }) {
     return failure?.call();
   }
@@ -632,11 +655,11 @@ class _$_Failure implements _Failure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Ready value)? ready,
-    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_SuccessfullyScannedObject value)?
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Ready value)? ready,
+    TResult? Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
   }) {
     return failure?.call(this);
@@ -670,28 +693,26 @@ abstract class _$$_SuccessfullyScannedObjectCopyWith<$Res> {
           _$_SuccessfullyScannedObject value,
           $Res Function(_$_SuccessfullyScannedObject) then) =
       __$$_SuccessfullyScannedObjectCopyWithImpl<$Res>;
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
 class __$$_SuccessfullyScannedObjectCopyWithImpl<$Res>
-    extends _$ScannerStateCopyWithImpl<$Res>
+    extends _$ScannerStateCopyWithImpl<$Res, _$_SuccessfullyScannedObject>
     implements _$$_SuccessfullyScannedObjectCopyWith<$Res> {
   __$$_SuccessfullyScannedObjectCopyWithImpl(
       _$_SuccessfullyScannedObject _value,
       $Res Function(_$_SuccessfullyScannedObject) _then)
-      : super(_value, (v) => _then(v as _$_SuccessfullyScannedObject));
+      : super(_value, _then);
 
-  @override
-  _$_SuccessfullyScannedObject get _value =>
-      super._value as _$_SuccessfullyScannedObject;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
     return _then(_$_SuccessfullyScannedObject(
-      message == freezed
+      null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -701,15 +722,26 @@ class __$$_SuccessfullyScannedObjectCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SuccessfullyScannedObject implements _SuccessfullyScannedObject {
+class _$_SuccessfullyScannedObject
+    with DiagnosticableTreeMixin
+    implements _SuccessfullyScannedObject {
   const _$_SuccessfullyScannedObject(this.message);
 
   @override
   final String message;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ScannerState.successfullyScannedObject(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'ScannerState.successfullyScannedObject'))
+      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -717,15 +749,15 @@ class _$_SuccessfullyScannedObject implements _SuccessfullyScannedObject {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SuccessfullyScannedObject &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SuccessfullyScannedObjectCopyWith<_$_SuccessfullyScannedObject>
       get copyWith => __$$_SuccessfullyScannedObjectCopyWithImpl<
           _$_SuccessfullyScannedObject>(this, _$identity);
@@ -747,13 +779,13 @@ class _$_SuccessfullyScannedObject implements _SuccessfullyScannedObject {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(
+    TResult? Function()? initial,
+    TResult? Function(
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
-    TResult Function()? cameraAccessDenied,
-    TResult Function()? failure,
-    TResult Function(String message)? successfullyScannedObject,
+    TResult? Function()? cameraAccessDenied,
+    TResult? Function()? failure,
+    TResult? Function(String message)? successfullyScannedObject,
   }) {
     return successfullyScannedObject?.call(message);
   }
@@ -792,11 +824,11 @@ class _$_SuccessfullyScannedObject implements _SuccessfullyScannedObject {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Ready value)? ready,
-    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_SuccessfullyScannedObject value)?
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Ready value)? ready,
+    TResult? Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
   }) {
     return successfullyScannedObject?.call(this);

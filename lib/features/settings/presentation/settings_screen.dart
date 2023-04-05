@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipe_finder/common/widgets/appbar.dart';
@@ -8,6 +9,7 @@ import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/features/settings/presentation/cubit/settings_cubit.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
+@RoutePage()
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
 

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'settings_cubit.dart';
 
@@ -24,8 +24,8 @@ mixin _$SettingsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(bool value)? requestPermission,
+    TResult? Function()? initial,
+    TResult? Function(bool value)? requestPermission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,8 +43,8 @@ mixin _$SettingsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_RequestPermission value)? requestPermission,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RequestPermission value)? requestPermission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,17 +60,18 @@ mixin _$SettingsState {
 abstract class $SettingsStateCopyWith<$Res> {
   factory $SettingsStateCopyWith(
           SettingsState value, $Res Function(SettingsState) then) =
-      _$SettingsStateCopyWithImpl<$Res>;
+      _$SettingsStateCopyWithImpl<$Res, SettingsState>;
 }
 
 /// @nodoc
-class _$SettingsStateCopyWithImpl<$Res>
+class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
     implements $SettingsStateCopyWith<$Res> {
   _$SettingsStateCopyWithImpl(this._value, this._then);
 
-  final SettingsState _value;
   // ignore: unused_field
-  final $Res Function(SettingsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -81,13 +82,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$SettingsStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -121,8 +120,8 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(bool value)? requestPermission,
+    TResult? Function()? initial,
+    TResult? Function(bool value)? requestPermission,
   }) {
     return initial?.call();
   }
@@ -152,8 +151,8 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_RequestPermission value)? requestPermission,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RequestPermission value)? requestPermission,
   }) {
     return initial?.call(this);
   }
@@ -181,26 +180,25 @@ abstract class _$$_RequestPermissionCopyWith<$Res> {
   factory _$$_RequestPermissionCopyWith(_$_RequestPermission value,
           $Res Function(_$_RequestPermission) then) =
       __$$_RequestPermissionCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool value});
 }
 
 /// @nodoc
 class __$$_RequestPermissionCopyWithImpl<$Res>
-    extends _$SettingsStateCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$_RequestPermission>
     implements _$$_RequestPermissionCopyWith<$Res> {
   __$$_RequestPermissionCopyWithImpl(
       _$_RequestPermission _value, $Res Function(_$_RequestPermission) _then)
-      : super(_value, (v) => _then(v as _$_RequestPermission));
+      : super(_value, _then);
 
-  @override
-  _$_RequestPermission get _value => super._value as _$_RequestPermission;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_$_RequestPermission(
-      value == freezed
+      null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -226,15 +224,15 @@ class _$_RequestPermission implements _RequestPermission {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RequestPermission &&
-            const DeepCollectionEquality().equals(other.value, value));
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RequestPermissionCopyWith<_$_RequestPermission> get copyWith =>
       __$$_RequestPermissionCopyWithImpl<_$_RequestPermission>(
           this, _$identity);
@@ -251,8 +249,8 @@ class _$_RequestPermission implements _RequestPermission {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(bool value)? requestPermission,
+    TResult? Function()? initial,
+    TResult? Function(bool value)? requestPermission,
   }) {
     return requestPermission?.call(value);
   }
@@ -282,8 +280,8 @@ class _$_RequestPermission implements _RequestPermission {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_RequestPermission value)? requestPermission,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RequestPermission value)? requestPermission,
   }) {
     return requestPermission?.call(this);
   }

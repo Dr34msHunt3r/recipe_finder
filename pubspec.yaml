@@ -17,8 +17,8 @@ dependencies:
     sdk: flutter
 
   # routing
-  auto_route_generator: ^4.2.1
-  auto_route: ^4.2.1
+  auto_route_generator: ^6.0.0
+  auto_route: ^6.0.0+1
 
   # state management
   bloc: ^8.1.0
@@ -31,8 +31,8 @@ dependencies:
 
   # service locator + dependency injection
   get_it: ^7.2.0
-  injectable: ^1.5.3
-  injectable_generator: ^1.5.4
+  injectable: ^2.1.0
+  injectable_generator: ^2.1.4
 
   # firebase
   firebase_core: ^2.3.0
@@ -45,7 +45,7 @@ dependencies:
   flutter_native_splash: ^2.2.7
   camera: ^0.10.0+1
   flutter_speed_dial: ^6.0.0
-  google_mlkit_object_detection: ^0.5.0
+  google_mlkit_object_detection: ^0.6.0
   path_provider: ^2.0.11
   permission_handler: ^10.0.0
   fluttertoast: ^8.0.9
@@ -56,7 +56,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-  flutter_launcher_icons: ^0.10.0
+  flutter_launcher_icons: ^0.12.0
 
 flutter_icons:
   android: true

@@ -1,8 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipe_finder/core/config/app_assets.dart';
+import 'package:recipe_finder/core/config/app_paths.dart';
 import 'package:recipe_finder/features/splash_screen/presentation/cubit/splash_cubit.dart';
 
+@RoutePage(name: AppPaths.splashName)
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 

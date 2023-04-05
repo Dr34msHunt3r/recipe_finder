@@ -13,6 +13,7 @@ import 'package:recipe_finder/features/scanner/presentation/cubit/scanner_cubit.
 import 'package:recipe_finder/features/settings/presentation/settings_screen.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
+@RoutePage()
 class ScannerScreen extends StatelessWidget {
   const ScannerScreen({Key? key}) : super(key: key);
 
