@@ -23,6 +23,8 @@ mixin _$ScannerState {
             CameraController cameraController, CustomPaint? customPaint)
         ready,
     required TResult Function() cameraAccessDenied,
+    required TResult Function(List<ProductModel?> scannedProducts)
+        scannedProductList,
     required TResult Function() failure,
     required TResult Function(String message) successfullyScannedObject,
   }) =>
@@ -34,6 +36,7 @@ mixin _$ScannerState {
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
     TResult? Function()? cameraAccessDenied,
+    TResult? Function(List<ProductModel?> scannedProducts)? scannedProductList,
     TResult? Function()? failure,
     TResult? Function(String message)? successfullyScannedObject,
   }) =>
@@ -45,6 +48,7 @@ mixin _$ScannerState {
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
     TResult Function()? cameraAccessDenied,
+    TResult Function(List<ProductModel?> scannedProducts)? scannedProductList,
     TResult Function()? failure,
     TResult Function(String message)? successfullyScannedObject,
     required TResult orElse(),
@@ -55,6 +59,7 @@ mixin _$ScannerState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Ready value) ready,
     required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
+    required TResult Function(_ScannedProductList value) scannedProductList,
     required TResult Function(_Failure value) failure,
     required TResult Function(_SuccessfullyScannedObject value)
         successfullyScannedObject,
@@ -65,6 +70,7 @@ mixin _$ScannerState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Ready value)? ready,
     TResult? Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult? Function(_ScannedProductList value)? scannedProductList,
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
@@ -75,6 +81,7 @@ mixin _$ScannerState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult Function(_ScannedProductList value)? scannedProductList,
     TResult Function(_Failure value)? failure,
     TResult Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
@@ -149,6 +156,8 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
             CameraController cameraController, CustomPaint? customPaint)
         ready,
     required TResult Function() cameraAccessDenied,
+    required TResult Function(List<ProductModel?> scannedProducts)
+        scannedProductList,
     required TResult Function() failure,
     required TResult Function(String message) successfullyScannedObject,
   }) {
@@ -163,6 +172,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
     TResult? Function()? cameraAccessDenied,
+    TResult? Function(List<ProductModel?> scannedProducts)? scannedProductList,
     TResult? Function()? failure,
     TResult? Function(String message)? successfullyScannedObject,
   }) {
@@ -177,6 +187,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
     TResult Function()? cameraAccessDenied,
+    TResult Function(List<ProductModel?> scannedProducts)? scannedProductList,
     TResult Function()? failure,
     TResult Function(String message)? successfullyScannedObject,
     required TResult orElse(),
@@ -193,6 +204,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Ready value) ready,
     required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
+    required TResult Function(_ScannedProductList value) scannedProductList,
     required TResult Function(_Failure value) failure,
     required TResult Function(_SuccessfullyScannedObject value)
         successfullyScannedObject,
@@ -206,6 +218,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Ready value)? ready,
     TResult? Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult? Function(_ScannedProductList value)? scannedProductList,
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
@@ -219,6 +232,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult Function(_ScannedProductList value)? scannedProductList,
     TResult Function(_Failure value)? failure,
     TResult Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
@@ -321,6 +335,8 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
             CameraController cameraController, CustomPaint? customPaint)
         ready,
     required TResult Function() cameraAccessDenied,
+    required TResult Function(List<ProductModel?> scannedProducts)
+        scannedProductList,
     required TResult Function() failure,
     required TResult Function(String message) successfullyScannedObject,
   }) {
@@ -335,6 +351,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
     TResult? Function()? cameraAccessDenied,
+    TResult? Function(List<ProductModel?> scannedProducts)? scannedProductList,
     TResult? Function()? failure,
     TResult? Function(String message)? successfullyScannedObject,
   }) {
@@ -349,6 +366,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
     TResult Function()? cameraAccessDenied,
+    TResult Function(List<ProductModel?> scannedProducts)? scannedProductList,
     TResult Function()? failure,
     TResult Function(String message)? successfullyScannedObject,
     required TResult orElse(),
@@ -365,6 +383,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Ready value) ready,
     required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
+    required TResult Function(_ScannedProductList value) scannedProductList,
     required TResult Function(_Failure value) failure,
     required TResult Function(_SuccessfullyScannedObject value)
         successfullyScannedObject,
@@ -378,6 +397,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Ready value)? ready,
     TResult? Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult? Function(_ScannedProductList value)? scannedProductList,
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
@@ -391,6 +411,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult Function(_ScannedProductList value)? scannedProductList,
     TResult Function(_Failure value)? failure,
     TResult Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
@@ -466,6 +487,8 @@ class _$_CameraAccessDenied
             CameraController cameraController, CustomPaint? customPaint)
         ready,
     required TResult Function() cameraAccessDenied,
+    required TResult Function(List<ProductModel?> scannedProducts)
+        scannedProductList,
     required TResult Function() failure,
     required TResult Function(String message) successfullyScannedObject,
   }) {
@@ -480,6 +503,7 @@ class _$_CameraAccessDenied
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
     TResult? Function()? cameraAccessDenied,
+    TResult? Function(List<ProductModel?> scannedProducts)? scannedProductList,
     TResult? Function()? failure,
     TResult? Function(String message)? successfullyScannedObject,
   }) {
@@ -494,6 +518,7 @@ class _$_CameraAccessDenied
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
     TResult Function()? cameraAccessDenied,
+    TResult Function(List<ProductModel?> scannedProducts)? scannedProductList,
     TResult Function()? failure,
     TResult Function(String message)? successfullyScannedObject,
     required TResult orElse(),
@@ -510,6 +535,7 @@ class _$_CameraAccessDenied
     required TResult Function(_Initial value) initial,
     required TResult Function(_Ready value) ready,
     required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
+    required TResult Function(_ScannedProductList value) scannedProductList,
     required TResult Function(_Failure value) failure,
     required TResult Function(_SuccessfullyScannedObject value)
         successfullyScannedObject,
@@ -523,6 +549,7 @@ class _$_CameraAccessDenied
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Ready value)? ready,
     TResult? Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult? Function(_ScannedProductList value)? scannedProductList,
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
@@ -536,6 +563,7 @@ class _$_CameraAccessDenied
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult Function(_ScannedProductList value)? scannedProductList,
     TResult Function(_Failure value)? failure,
     TResult Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
@@ -551,6 +579,194 @@ class _$_CameraAccessDenied
 abstract class _CameraAccessDenied
     implements ScannerState, ScannerBuilderState {
   const factory _CameraAccessDenied() = _$_CameraAccessDenied;
+}
+
+/// @nodoc
+abstract class _$$_ScannedProductListCopyWith<$Res> {
+  factory _$$_ScannedProductListCopyWith(_$_ScannedProductList value,
+          $Res Function(_$_ScannedProductList) then) =
+      __$$_ScannedProductListCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<ProductModel?> scannedProducts});
+}
+
+/// @nodoc
+class __$$_ScannedProductListCopyWithImpl<$Res>
+    extends _$ScannerStateCopyWithImpl<$Res, _$_ScannedProductList>
+    implements _$$_ScannedProductListCopyWith<$Res> {
+  __$$_ScannedProductListCopyWithImpl(
+      _$_ScannedProductList _value, $Res Function(_$_ScannedProductList) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? scannedProducts = null,
+  }) {
+    return _then(_$_ScannedProductList(
+      null == scannedProducts
+          ? _value._scannedProducts
+          : scannedProducts // ignore: cast_nullable_to_non_nullable
+              as List<ProductModel?>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ScannedProductList
+    with DiagnosticableTreeMixin
+    implements _ScannedProductList {
+  const _$_ScannedProductList(final List<ProductModel?> scannedProducts)
+      : _scannedProducts = scannedProducts;
+
+  final List<ProductModel?> _scannedProducts;
+  @override
+  List<ProductModel?> get scannedProducts {
+    if (_scannedProducts is EqualUnmodifiableListView) return _scannedProducts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_scannedProducts);
+  }
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ScannerState.scannedProductList(scannedProducts: $scannedProducts)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ScannerState.scannedProductList'))
+      ..add(DiagnosticsProperty('scannedProducts', scannedProducts));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ScannedProductList &&
+            const DeepCollectionEquality()
+                .equals(other._scannedProducts, _scannedProducts));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_scannedProducts));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ScannedProductListCopyWith<_$_ScannedProductList> get copyWith =>
+      __$$_ScannedProductListCopyWithImpl<_$_ScannedProductList>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(
+            CameraController cameraController, CustomPaint? customPaint)
+        ready,
+    required TResult Function() cameraAccessDenied,
+    required TResult Function(List<ProductModel?> scannedProducts)
+        scannedProductList,
+    required TResult Function() failure,
+    required TResult Function(String message) successfullyScannedObject,
+  }) {
+    return scannedProductList(scannedProducts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(
+            CameraController cameraController, CustomPaint? customPaint)?
+        ready,
+    TResult? Function()? cameraAccessDenied,
+    TResult? Function(List<ProductModel?> scannedProducts)? scannedProductList,
+    TResult? Function()? failure,
+    TResult? Function(String message)? successfullyScannedObject,
+  }) {
+    return scannedProductList?.call(scannedProducts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(
+            CameraController cameraController, CustomPaint? customPaint)?
+        ready,
+    TResult Function()? cameraAccessDenied,
+    TResult Function(List<ProductModel?> scannedProducts)? scannedProductList,
+    TResult Function()? failure,
+    TResult Function(String message)? successfullyScannedObject,
+    required TResult orElse(),
+  }) {
+    if (scannedProductList != null) {
+      return scannedProductList(scannedProducts);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Ready value) ready,
+    required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
+    required TResult Function(_ScannedProductList value) scannedProductList,
+    required TResult Function(_Failure value) failure,
+    required TResult Function(_SuccessfullyScannedObject value)
+        successfullyScannedObject,
+  }) {
+    return scannedProductList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Ready value)? ready,
+    TResult? Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult? Function(_ScannedProductList value)? scannedProductList,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
+  }) {
+    return scannedProductList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Ready value)? ready,
+    TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult Function(_ScannedProductList value)? scannedProductList,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessfullyScannedObject value)?
+        successfullyScannedObject,
+    required TResult orElse(),
+  }) {
+    if (scannedProductList != null) {
+      return scannedProductList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ScannedProductList
+    implements ScannerState, ScannerBuilderState {
+  const factory _ScannedProductList(final List<ProductModel?> scannedProducts) =
+      _$_ScannedProductList;
+
+  List<ProductModel?> get scannedProducts;
+  @JsonKey(ignore: true)
+  _$$_ScannedProductListCopyWith<_$_ScannedProductList> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -601,6 +817,8 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
             CameraController cameraController, CustomPaint? customPaint)
         ready,
     required TResult Function() cameraAccessDenied,
+    required TResult Function(List<ProductModel?> scannedProducts)
+        scannedProductList,
     required TResult Function() failure,
     required TResult Function(String message) successfullyScannedObject,
   }) {
@@ -615,6 +833,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
     TResult? Function()? cameraAccessDenied,
+    TResult? Function(List<ProductModel?> scannedProducts)? scannedProductList,
     TResult? Function()? failure,
     TResult? Function(String message)? successfullyScannedObject,
   }) {
@@ -629,6 +848,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
     TResult Function()? cameraAccessDenied,
+    TResult Function(List<ProductModel?> scannedProducts)? scannedProductList,
     TResult Function()? failure,
     TResult Function(String message)? successfullyScannedObject,
     required TResult orElse(),
@@ -645,6 +865,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Ready value) ready,
     required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
+    required TResult Function(_ScannedProductList value) scannedProductList,
     required TResult Function(_Failure value) failure,
     required TResult Function(_SuccessfullyScannedObject value)
         successfullyScannedObject,
@@ -658,6 +879,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Ready value)? ready,
     TResult? Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult? Function(_ScannedProductList value)? scannedProductList,
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
@@ -671,6 +893,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult Function(_ScannedProductList value)? scannedProductList,
     TResult Function(_Failure value)? failure,
     TResult Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
@@ -770,6 +993,8 @@ class _$_SuccessfullyScannedObject
             CameraController cameraController, CustomPaint? customPaint)
         ready,
     required TResult Function() cameraAccessDenied,
+    required TResult Function(List<ProductModel?> scannedProducts)
+        scannedProductList,
     required TResult Function() failure,
     required TResult Function(String message) successfullyScannedObject,
   }) {
@@ -784,6 +1009,7 @@ class _$_SuccessfullyScannedObject
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
     TResult? Function()? cameraAccessDenied,
+    TResult? Function(List<ProductModel?> scannedProducts)? scannedProductList,
     TResult? Function()? failure,
     TResult? Function(String message)? successfullyScannedObject,
   }) {
@@ -798,6 +1024,7 @@ class _$_SuccessfullyScannedObject
             CameraController cameraController, CustomPaint? customPaint)?
         ready,
     TResult Function()? cameraAccessDenied,
+    TResult Function(List<ProductModel?> scannedProducts)? scannedProductList,
     TResult Function()? failure,
     TResult Function(String message)? successfullyScannedObject,
     required TResult orElse(),
@@ -814,6 +1041,7 @@ class _$_SuccessfullyScannedObject
     required TResult Function(_Initial value) initial,
     required TResult Function(_Ready value) ready,
     required TResult Function(_CameraAccessDenied value) cameraAccessDenied,
+    required TResult Function(_ScannedProductList value) scannedProductList,
     required TResult Function(_Failure value) failure,
     required TResult Function(_SuccessfullyScannedObject value)
         successfullyScannedObject,
@@ -827,6 +1055,7 @@ class _$_SuccessfullyScannedObject
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Ready value)? ready,
     TResult? Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult? Function(_ScannedProductList value)? scannedProductList,
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
@@ -840,6 +1069,7 @@ class _$_SuccessfullyScannedObject
     TResult Function(_Initial value)? initial,
     TResult Function(_Ready value)? ready,
     TResult Function(_CameraAccessDenied value)? cameraAccessDenied,
+    TResult Function(_ScannedProductList value)? scannedProductList,
     TResult Function(_Failure value)? failure,
     TResult Function(_SuccessfullyScannedObject value)?
         successfullyScannedObject,
