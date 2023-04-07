@@ -9,6 +9,7 @@ import 'package:recipe_finder/core/config/app_dimens.dart';
 import 'package:recipe_finder/core/config/app_paths.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/features/home/presentation/cubit/home_cubit.dart';
+import 'package:recipe_finder/features/home/presentation/scanned_product_list_widget.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
 @RoutePage()
@@ -35,6 +36,7 @@ class HomeView extends StatelessWidget {
               imageTitlePath: AppAssets.appTitle,
             ),
             _ScannerContentWidget(),
+            const ScannedProductListWidget(),
           ],
         ),
       );
