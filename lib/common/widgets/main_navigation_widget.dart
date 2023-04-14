@@ -16,7 +16,8 @@ class MainNavigationWidget extends StatelessWidget {
   Widget salomonBottomBarMenu(BuildContext context) => AutoTabsScaffold(
         routes: const [
           HomeScreen(),
-          ScannedProductsScreen(), // TODO: Exchange ScannedProductsRouter for RecipesRouter
+          ScannedProductsScreen(),
+          RecipesScreen(),
           SettingsScreen(),
         ],
         bottomNavigationBuilder: (_, tabsRouter) {
@@ -34,6 +35,14 @@ class MainNavigationWidget extends StatelessWidget {
                   size: AppDimens.extraLargeSpace_32,
                 ),
                 title: Text(context.localizations.home),
+              ),
+              SalomonBottomBarItem(
+                icon: const Icon(
+                  Icons.add_shopping_cart,
+                  size: AppDimens.extraLargeSpace_32,
+                ),
+                // TODO: localize
+                title: const Text('Products'),
               ),
               SalomonBottomBarItem(
                 icon: const Icon(

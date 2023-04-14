@@ -35,6 +35,10 @@ class AppRouter extends $AppRouter {
           path: AppPaths.scannedProductsPath,
         ),
         AutoRoute(
+          page: RecipesScreen.page,
+          path: AppPaths.recipesPath,
+        ),
+        AutoRoute(
           path: AppPaths.settingsPath,
           page: SettingsScreen.page,
         ),
