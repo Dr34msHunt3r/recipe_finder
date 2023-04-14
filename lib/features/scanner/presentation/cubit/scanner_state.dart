@@ -13,7 +13,7 @@ class ScannerState with _$ScannerState {
 
   @Implements<ScannerBuilderState>()
   const factory ScannerState.scannedProductList(
-      List<ProductModel?> scannedProducts) = _ScannedProductList;
+      List<Product?> scannedProducts) = _ScannedProductList;
 
   @Implements<ScannerListenerState>()
   const factory ScannerState.failure() = _Failure;

@@ -10,7 +10,7 @@ import 'package:google_mlkit_object_detection/google_mlkit_object_detection.dart
 import 'package:injectable/injectable.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:recipe_finder/common/models/product/product_model.dart';
+import 'package:recipe_finder/domain/product/model/product.dart';
 import 'package:recipe_finder/features/scanner/object_detector_painter.dart';
 
 part 'scanner_cubit.freezed.dart';
@@ -26,7 +26,7 @@ class ScannerCubit extends Cubit<ScannerState> {
   bool _canProcess = false;
   bool _isBusy = false;
   CustomPaint? _customPaint;
-  final List<ProductModel?> _scannedProducts = [];
+  final List<Product?> _scannedProducts = [];
 
   static const path = 'assets/ml/object_labeler.tflite';
 
@@ -168,8 +168,8 @@ class ScannerCubit extends Cubit<ScannerState> {
 
       if (highestConfidenceObject != null) {
         if (!_checkIfProductIsInList(highestConfidenceObject)) {
-          _scannedProducts.add(ProductModel(
-            uid: highestConfidenceObject.index.toString(),
+          _scannedProducts.add(Product(
+            id: highestConfidenceObject.index.toString(),
             name: highestConfidenceObject.text,
           ));
           emit(ScannerState.successfullyScannedObject(
@@ -189,6 +189,7 @@ class ScannerCubit extends Cubit<ScannerState> {
 
   @override
   Future<void> close() {
+    // TODO: maybe not a state but call to save this list to sqlite or state and call for save method in app would be more clear
     emit(ScannerState.scannedProductList(_scannedProducts));
     print(_scannedProducts);
     _canProcess = false;
