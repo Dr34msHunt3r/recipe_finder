@@ -8,14 +8,14 @@ import 'package:intl/intl.dart' as intl;
 import 'app_localizations_en.dart';
 import 'app_localizations_pl.dart';
 
-/// Callers can lookup localized strings with an instance of AppLocalizations returned
-/// by `AppLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of AppLocalizations
+/// returned by `AppLocalizations.of(context)`.
 ///
 /// Applications need to include `AppLocalizations.delegate()` in their app's
-/// localizationDelegates list, and the locales they support in the app's
-/// supportedLocales list. For example:
+/// `localizationDelegates` list, and the locales they support in the app's
+/// `supportedLocales` list. For example:
 ///
-/// ```
+/// ```dart
 /// import 'gen_l10n/app_localizations.dart';
 ///
 /// return MaterialApp(
@@ -30,14 +30,14 @@ import 'app_localizations_pl.dart';
 /// Please make sure to update your pubspec.yaml to include the following
 /// packages:
 ///
-/// ```
+/// ```yaml
 /// dependencies:
 ///   # Internationalization support.
 ///   flutter_localizations:
 ///     sdk: flutter
 ///   intl: any # Use the pinned version from flutter_localizations
 ///
-///   # rest of dependencies
+///   # Rest of dependencies
 /// ```
 ///
 /// ## iOS Applications
@@ -179,6 +179,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Permission denied'**
   String get permissionDenied;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'delete'**
+  String get delete;
+
+  /// No description provided for @products.
+  ///
+  /// In en, this message translates to:
+  /// **'Products'**
+  String get products;
 }
 
 class _AppLocalizationsDelegate

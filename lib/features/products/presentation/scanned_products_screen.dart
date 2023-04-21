@@ -7,6 +7,7 @@ import 'package:recipe_finder/common/widgets/base_screen.dart';
 import 'package:recipe_finder/common/widgets/custom_scroll_behavior.dart';
 import 'package:recipe_finder/core/config/app_colors.dart';
 import 'package:recipe_finder/core/config/app_dimens.dart';
+import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/features/products/presentation/cubit/product_cubit.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
@@ -28,12 +29,11 @@ class ScannedProductView extends StatelessWidget {
   Widget build(BuildContext context) => BaseScreen(
         customPadding: EdgeInsets.zero,
         child: Column(
-          children: const [
-            // TODO: localize
+          children: [
             CustomizedAppbar(
-              title: 'Scanned Products',
+              title: context.localizations.scannedProducts,
             ),
-            _ProductListsView(),
+            const _ProductListsView(),
           ],
         ),
       );
@@ -116,8 +116,7 @@ class _CustomizedSlidable extends StatelessWidget {
               borderRadius: BorderRadius.circular(3),
               backgroundColor: AppColors.statusRed,
               icon: Icons.delete,
-              // TODO: localize
-              label: 'delete',
+              label: context.localizations.delete,
               onPressed: (_) =>
                   print('Product No. ${index + 1} ha been tapped'),
             ),

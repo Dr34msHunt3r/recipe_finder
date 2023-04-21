@@ -22,5 +22,7 @@
   "recipeFinder": "Recipe Finder",
   "tapHereToScanIngredients": "Tap here to scan ingredients",
   "permissionAllowed": "Permission allowed",
-  "permissionDenied": "Permission denied"
+  "permissionDenied": "Permission denied",
+  "delete": "delete",
+  "products": "Products"
 }

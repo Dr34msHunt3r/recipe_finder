@@ -1,6 +1,3 @@
-
-
-
 import 'app_localizations.dart';
 
 /// The translations for English (`en`).
@@ -50,4 +47,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get permissionDenied => 'Permission denied';
+
+  @override
+  String get delete => 'delete';
+
+  @override
+  String get products => 'Products';
 }

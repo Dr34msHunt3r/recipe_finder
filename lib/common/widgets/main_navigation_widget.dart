@@ -41,8 +41,7 @@ class MainNavigationWidget extends StatelessWidget {
                   Icons.add_shopping_cart,
                   size: AppDimens.extraLargeSpace_32,
                 ),
-                // TODO: localize
-                title: const Text('Products'),
+                title: Text(context.localizations.products),
               ),
               SalomonBottomBarItem(
                 icon: const Icon(
