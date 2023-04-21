@@ -9,7 +9,6 @@ import 'package:recipe_finder/core/config/app_dimens.dart';
 import 'package:recipe_finder/core/config/app_paths.dart';
 import 'package:recipe_finder/core/extension/build_context.dart';
 import 'package:recipe_finder/features/home/presentation/cubit/home_cubit.dart';
-import 'package:recipe_finder/features/home/presentation/scanned_product_list_widget.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
 @RoutePage()
@@ -18,6 +17,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BlocProvider(
+        // TODO: home cubit should check if there is any latest product scan
         create: (BuildContext context) => getIt<HomeCubit>(),
         child: const HomeView(),
       );
@@ -36,7 +36,7 @@ class HomeView extends StatelessWidget {
               imageTitlePath: AppAssets.appTitle,
             ),
             _ScannerContentWidget(),
-            const ScannedProductListWidget(),
+            // TODO: _youHaveScannedProductsInformation(after click it can lead to products scanned screen)
           ],
         ),
       );
