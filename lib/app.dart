@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe_finder/core/extension/app_router.dart';
 import 'package:recipe_finder/core/routing/app_router.gr.dart';
-import 'package:recipe_finder/features/scanner/presentation/cubit/scanner_cubit.dart';
 import 'package:recipe_finder/features/splash_screen/presentation/cubit/splash_cubit.dart';
 import 'package:recipe_finder/injectable/injectable.dart';
 
@@ -24,22 +23,15 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     final splashCubit =
         getIt<SplashCubit>(param1: [LoadingTask(_preloadImageAssets)]);
-    final scannerCubit = getIt<ScannerCubit>();
 
     _observeSplashStates(
       splashCubit: splashCubit,
-    );
-    _observeScannerStates(
-      scannerCubit: scannerCubit,
     );
 
     return MultiProvider(
       providers: [
         BlocProvider<SplashCubit>(
           create: (_) => splashCubit,
-        ),
-        BlocProvider<ScannerCubit>(
-          create: (_) => scannerCubit,
         ),
       ],
       child: MaterialApp.router(
@@ -62,16 +54,5 @@ class App extends StatelessWidget {
             const MainNavigationRouter(),
           ),
         ));
-  }
-
-  void _observeScannerStates({
-    required ScannerCubit scannerCubit,
-  }) {
-    scannerCubit.stream.listen(
-      (state) => state.maybeWhen(
-        orElse: () => null,
-        scannedProductList: (scannedProductList) => print(scannedProductList),
-      ),
-    );
   }
 }
