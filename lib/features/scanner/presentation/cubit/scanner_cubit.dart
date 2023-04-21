@@ -189,8 +189,7 @@ class ScannerCubit extends Cubit<ScannerState> {
 
   @override
   Future<void> close() {
-    // TODO: maybe not a state but call to save this list to sqlite or state and call for save method in app would be more clear
-    emit(ScannerState.scannedProductList(_scannedProducts));
+    // TODO: call method to save products
     print(_scannedProducts);
     _canProcess = false;
     _cameraController.stopImageStream().then(

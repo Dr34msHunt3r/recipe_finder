@@ -11,10 +11,6 @@ class ScannerState with _$ScannerState {
   @Implements<ScannerBuilderState>()
   const factory ScannerState.cameraAccessDenied() = _CameraAccessDenied;
 
-  @Implements<ScannerBuilderState>()
-  const factory ScannerState.scannedProductList(
-      List<Product?> scannedProducts) = _ScannedProductList;
-
   @Implements<ScannerListenerState>()
   const factory ScannerState.failure() = _Failure;
 
